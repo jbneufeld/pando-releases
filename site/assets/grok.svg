@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- the Grok mark alone, the slash strokes, no badge behind them (2026-09-04:
+       "just the middle part and larger with no white around it") -->
+  <path d="M3.5 20.5 20.5 3.5M16.6 20.5 3.5 7.4" stroke="#e8eaed" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+</svg>

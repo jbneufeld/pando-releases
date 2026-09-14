@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img">
+  <title>Pando</title>
+  <!--
+    The Pando brandmark, "Aspen Eye" (CANON 2026-08-22), as a standalone file.
+
+    Geometry copied verbatim from ui/src/components/PandoMark.tsx, which is the
+    source of truth and carries the full construction notes. If the geometry
+    moves there, move it here too.
+
+    One deliberate difference: literal hex instead of currentColor. This file
+    loads through an img tag, which gets no page CSS, so currentColor would
+    render black. #F2F2F2 is the mark on the dark shell; a light surface needs
+    a filter (see how ollama.svg is inverted in app.css) or the component.
+  -->
+  <g fill="#F2F2F2">
+    <path d="M5 32 A34.877 34.877 0 0 1 33.2 19.221 L33.2 24.024 A30.077 30.077 0 0 0 11.574 32 Z"/>
+    <path d="M59 32 A34.877 34.877 0 0 0 35.6 19.386 L35.6 24.216 A30.077 30.077 0 0 1 52.426 32 Z"/>
+    <path d="M5 32 A34.877 34.877 0 0 0 28.4 44.614 L28.4 39.784 A30.077 30.077 0 0 1 11.574 32 Z"/>
+    <path d="M59 32 A34.877 34.877 0 0 1 30.8 44.779 L30.8 39.976 A30.077 30.077 0 0 0 52.426 32 Z"/>
+    <path d="M30.8 8.5 H33.2 V55.5 H30.8 Z"/>
+  </g>
+</svg>
