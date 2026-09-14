@@ -27,7 +27,13 @@
 html{background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
-body{margin:0;font-family:var(--font);font-size:16px;line-height:1.6;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+/* Hosting guard: the page scrolls the viewport, never a wrapper. A host rule such as
+   html,body{height:100%;overflow:hidden auto} turns body into its own scroll container and
+   kills position:sticky, which is the whole film. Keep html/body plain. */
+html,body{height:auto!important;overflow:visible!important}
+html{overflow-x:clip!important}
+html.intro-lock{overflow:hidden!important}
+body{margin:0;font-family:var(--font);font-size:16px;line-height:1.6;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer}
 img,svg{display:block;max-width:100%}
@@ -53,7 +59,7 @@ svg use{fill:inherit}
 #intro{position:fixed;inset:0;width:100%;height:100%;z-index:60;background:var(--bg);cursor:pointer;display:none}
 #intro.on{display:block}
 #intro.clear{background:transparent}
-html.intro-lock,html.intro-lock body{overflow:hidden}
+html.intro-lock,html.intro-lock body{overflow:hidden!important}
 /* ---------- header ---------- */
 .site-header{position:fixed;inset:0 0 auto 0;z-index:var(--z-header);height:64px;display:flex;align-items:center;padding-inline:var(--gutter)}
 .site-header::before{content:"";position:absolute;inset:0 0 auto 0;height:170%;z-index:-1;pointer-events:none;background:linear-gradient(to bottom,rgba(10,10,10,.92),rgba(10,10,10,.6) 55%,rgba(10,10,10,0))}
@@ -590,6 +596,24 @@ html.rm .beat::before{display:none}
 html.rm .progress,html.rm .chapters,html.rm .gate,html.rm .dust{display:none}
 html.rm .section .wrap>*{opacity:1;transform:none;transition:none}
 html.rm .cur{animation:none}
+
+/* ---- Agents (0.3.2): install any CLI from setup ---- */
+.agents .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);margin-top:48px}
+.agents figure{margin:0;border:1px solid var(--edge);border-radius:var(--r);background:var(--panel);overflow:hidden}
+.agents .grid{align-items:start}
+.agents figure img{display:block;width:100%;height:auto;max-height:400px;object-fit:contain;object-position:center;background:var(--bg);border-bottom:1px solid var(--hair)}
+.agents figcaption{padding:14px 16px 16px;color:var(--ink2);font-size:14px;line-height:1.5}
+.agents figcaption b{color:var(--ink);font-weight:600}
+.agents .roster{display:grid;grid-template-columns:1fr 1fr;gap:20px 28px;margin-top:36px}
+.agents .roster div b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+.agents .roster div span{display:block;color:var(--ink);font-size:15px;margin-top:8px;line-height:1.55}
+.agents .foot{margin-top:24px;color:var(--ink2);font-size:14px}
+.brainsec .import{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(20px,3vw,40px);align-items:center;margin-top:44px}
+.brainsec .import figure{margin:0;border:1px solid var(--edge);border-radius:var(--r);background:var(--panel);overflow:hidden}
+.brainsec .import img{display:block;width:100%;height:auto}
+.brainsec .import h3{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.01em;margin:0}
+.brainsec .import p{margin-top:12px;color:var(--ink2);font-size:15px;line-height:1.55;max-width:48ch}
+@media (max-width:900px){.agents .grid,.agents .roster,.brainsec .import{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -830,12 +854,37 @@ html.rm .cur{animation:none}
   </div>
 </section>
 
+<!-- ============ AGENTS (0.3.2) ============ -->
+<section class="section agents" id="agents">
+  <div class="wrap">
+    <p class="eyebrow">Agents</p>
+    <h2 class="big">Any agent you already use.</h2>
+    <p class="lede">Setup lists every coding CLI Pando can run and shows which are on your Mac. Pick the ones you use. Installing opens a terminal with the vendor's own install command typed in. You press Enter. Pando never runs an installer and never holds an account for you.</p>
+    <div class="grid">
+      <figure><img src="assets/0.3.2/agents-step.jpg" alt="The Choose your agents step in Pando setup, listing coding CLIs with Install, Connect and Add switches" loading="lazy"><figcaption><b>Choose your agents.</b> Every CLI shows whether it is installed, connected to the Brain, or ready.</figcaption></figure>
+      <figure><img src="assets/0.3.2/install-terminal.jpg" alt="A Pando terminal pane with an install command typed and waiting" loading="lazy"><figcaption><b>You press Enter.</b> The install command waits on the line. Nothing installs without you.</figcaption></figure>
+    </div>
+    <div class="roster">
+      <div><b>Full controls</b><span>Claude Code, Codex, Gemini CLI, Grok CLI, Ollama. Model, effort and mode pills.</span></div>
+      <div><b>Terminal pane</b><span>OpenCode, Aider, GitHub Copilot CLI, Cursor CLI, Amp, Goose, Qwen Code, Cline, Droid, Hermes Agent, Kimi Code, Mistral Vibe.</span></div>
+    </div>
+    <p class="foot">Plus any CLI you name. "Something else" adds one Pando has not heard of.</p>
+  </div>
+</section>
+
 <!-- ============ BRAIN ============ -->
 <section class="section brainsec" id="brain">
   <div class="wrap">
     <p class="eyebrow">The Brain</p>
     <h2 class="big">A memory that compiles itself.</h2>
     <p class="lede">Every note an agent saves is a source. The compiler links sources into a wiki of compiled understanding, keeps every version, and lets two accounts disagree until an outcome settles it. Plain markdown underneath, on your disk, read by every agent over one bundled MCP server.</p>
+        <div class="import">
+      <figure><img src="assets/0.3.2/import-review.jpg" alt="Pando setup reviewing lines imported from other assistants as a tick list" loading="lazy"></figure>
+      <div>
+        <h3>Bring what your assistants already know.</h3>
+        <p>Setup can read the memory Claude Code, Codex and Gemini CLI already keep on your Mac, or a list pasted from ChatGPT, Claude or Gemini in the browser. Every line appears as a tick list. Only ticked lines go into the Brain. Nothing leaves your Mac.</p>
+      </div>
+    </div>
     <div class="sbwrap" id="sbSection"></div>
   </div>
 </section>
@@ -884,12 +933,12 @@ html.rm .cur{animation:none}
     </div>
     <div class="dlbar" id="download">
       <div class="row">
-        <div class="v"><b>Pando <span id="relVersion">0.3.2</span></b> &#183; <span id="relDate">Sep 14, 2026</span><small><span id="relSize">192 MB</span> &#183; macOS 14 or newer &#183; Apple Silicon &#183; at least one agent CLI installed</small></div>
-        <a class="btn primary" id="relLink" href="https://github.com/jbneufeld/pando-releases/releases/download/v0.3.2/Pando-0.3.2-arm64.dmg" download><svg><use href="#i-down"/></svg>Download for Mac</a>
+        <div class="v"><b>Pando <span id="relVersion">0.3.3</span></b> &#183; <span id="relDate">Sep 14, 2026</span><small><span id="relSize">192 MB</span> &#183; macOS 14 or newer &#183; Apple Silicon &#183; at least one agent CLI installed</small></div>
+        <a class="btn primary" id="relLink" href="https://github.com/jbneufeld/pando-releases/releases/download/v0.3.3/Pando-0.3.3-arm64.dmg" download><svg><use href="#i-down"/></svg>Download for Mac</a>
       </div>
       <p class="fine">Pando Voice installs from inside Pando once you subscribe.</p>
-      <details class="dl-sha"><summary>File and checksum</summary><code id="relFile">Pando-0.3.2-arm64.dmg</code><code id="relSha">bb947bb63161b4d74b65de4effcdf6cd251e50bd05ae7cd71642f5080e74a347</code><a href="https://github.com/jbneufeld/pando-releases/releases">All releases</a></details>
-      <p class="dl-notes" id="relNotes">Choose your agents (install any coding CLI from setup) and import memory from your other assistants.</p>
+      <details class="dl-sha"><summary>File and checksum</summary><code id="relFile">Pando-0.3.3-arm64.dmg</code><code id="relSha">201617074a9720fda71da80d9567dca40e8dbd7aace9de8635c967a9e76940d6</code><a href="https://github.com/jbneufeld/pando-releases/releases">All releases</a></details>
+      <p class="dl-notes" id="relNotes">Multiple accounts per CLI: add a second Claude Code or Codex login, pick the account per terminal, and see every account's limits in Usage.</p>
     </div>
   </div>
 </section>
