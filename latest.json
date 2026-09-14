@@ -1,9 +1,9 @@
 {
-  "version": "0.3.2",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.2/Pando-0.3.2-arm64.dmg",
-  "filename": "Pando-0.3.2-arm64.dmg",
-  "size": 201286052,
-  "sha256": "bb947bb63161b4d74b65de4effcdf6cd251e50bd05ae7cd71642f5080e74a347",
-  "notes": "Choose your agents (install any coding CLI from setup) and import memory from your other assistants.",
-  "publishedAt": "2026-09-14T20:38:10Z"
+  "version": "0.3.3",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.3/Pando-0.3.3-arm64.dmg",
+  "filename": "Pando-0.3.3-arm64.dmg",
+  "size": 201283906,
+  "sha256": "201617074a9720fda71da80d9567dca40e8dbd7aace9de8635c967a9e76940d6",
+  "notes": "Multiple accounts per CLI: add a second Claude Code or Codex login, pick the account per terminal, and see every account's limits in Usage.",
+  "publishedAt": "2026-09-14T22:56:27Z"
 }
