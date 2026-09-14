@@ -1,9 +1,9 @@
 {
-  "version": "0.3.1",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.1/Pando-0.3.1-arm64.dmg",
-  "filename": "Pando-0.3.1-arm64.dmg",
-  "size": 201287038,
-  "sha256": "a48748cf4e3430d4c2b90bfba3041e143c6fcad5d7b928436c1f369f523aa014",
-  "notes": "First preview build.",
-  "publishedAt": "2026-09-11T19:20:00Z"
+  "version": "0.3.2",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.2/Pando-0.3.2-arm64.dmg",
+  "filename": "Pando-0.3.2-arm64.dmg",
+  "size": 201286052,
+  "sha256": "bb947bb63161b4d74b65de4effcdf6cd251e50bd05ae7cd71642f5080e74a347",
+  "notes": "Choose your agents (install any coding CLI from setup) and import memory from your other assistants.",
+  "publishedAt": "2026-09-14T20:38:10Z"
 }
