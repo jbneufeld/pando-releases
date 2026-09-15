@@ -820,7 +820,7 @@ html.rm .cur{animation:none}
     <a href="#voice">Voice</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
-    <a class="btn primary" href="#download"><svg><use href="#i-down"/></svg>Download for Mac</a>
+    <a class="btn primary dl-direct" href="https://github.com/jbneufeld/pando-releases/releases/download/v0.3.4/Pando-0.3.4-arm64.dmg" download><svg><use href="#i-down"/></svg>Download for Mac</a>
   </nav>
 </header>
 
@@ -984,7 +984,7 @@ html.rm .cur{animation:none}
       <h1><span class="line"><span>Your agents.</span></span><span class="line"><span>One platform.</span></span><span class="line"><span>One memory.</span></span></h1>
       <p>A vibe coding platform where the agents you already pay for work side by side in real terminals, run on a schedule while you are away, and share one memory you own.</p>
       <div class="hero-cta">
-        <a class="btn primary big" href="#download"><svg><use href="#i-down"/></svg>Download for Mac</a>
+        <a class="btn primary big dl-direct" href="https://github.com/jbneufeld/pando-releases/releases/download/v0.3.4/Pando-0.3.4-arm64.dmg" download><svg><use href="#i-down"/></svg>Download for Mac</a>
         <a class="btn big ghost" href="#brain">See how the Brain works</a>
       </div>
       <div class="hero-engines"><span>Runs the agents already on your Mac</span><span class="logos"><img src="assets/claude.svg" alt="Claude Code" width="20" height="20"><img src="assets/codex.png" alt="Codex" width="20" height="20"><img src="assets/gemini.svg" alt="Gemini CLI" width="20" height="20"><img src="assets/grok.svg" alt="Grok" width="20" height="20"><img src="assets/ollama.svg" alt="Ollama" width="20" height="20" style="filter:invert(1)"></span></div>
@@ -1306,7 +1306,7 @@ renderAll();
     if (j.filename) $('relFile').textContent = j.filename;
     if (j.size) $('relSize').textContent = fmtMB(j.size);
     if (j.sha256) $('relSha').textContent = j.sha256;
-    if (j.url) $('relLink').href = j.url;
+    if (j.url){ $('relLink').href = j.url; document.querySelectorAll('.dl-direct').forEach(function(a){ a.href = j.url; }); }
     if (j.notes){ $('relNotes').textContent = j.notes; $('relNotes').hidden = false; }
     if (j.publishedAt){ var d = new Date(j.publishedAt); if (!isNaN(d)) $('relDate').textContent = d.toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'}); }
   }).catch(function(){});
@@ -1318,7 +1318,7 @@ renderAll();
   if (!IOS) return;
   document.documentElement.classList.add('ios');
   var link = $('relLink'); link.removeAttribute('download'); link.innerHTML = '<svg><use href="#i-down"/></svg>Send yourself the link';
-  document.querySelectorAll('a.btn[href="#download"]').forEach(function(a){ a.innerHTML = '<svg><use href="#i-down"/></svg>Made for Mac'; });
+  document.querySelectorAll('a.dl-direct').forEach(function(a){ a.classList.remove('dl-direct'); a.removeAttribute('download'); a.href = '#download'; a.innerHTML = '<svg><use href="#i-down"/></svg>Made for Mac'; });
   var note = document.createElement('p'); note.className = 'fine ios-note'; note.textContent = 'Pando is a Mac app. Send the download link to yourself and open it on your Mac.';
   link.closest('.dlbar').insertBefore(note, link.closest('.row').nextSibling);
   link.addEventListener('click', function(e){
@@ -1505,7 +1505,7 @@ function paintOverlays(p){
 function runIntro(done){
   var cv = $('intro'), ctx = cv.getContext('2d');
   var DPR = Math.min(devicePixelRatio || 1, 1.5), W = 0, H = 0;
-  function size(){ W = innerWidth; H = innerHeight; cv.width = W * DPR; cv.height = H * DPR; cv.style.width = W + 'px'; cv.style.height = H + 'px'; ctx.setTransform(DPR, 0, 0, DPR, 0, 0); }
+  function size(){ W = innerWidth; H = innerHeight; cv.width = W * DPR; cv.height = H * DPR; cv.style.width = W + 'px'; cv.style.height = H + 'px'; ctx.setTransform(DPR, 0, 0, DPR, 0, 0); if (particles && particles.length) place(); }
   size(); cv.classList.remove('off'); document.documentElement.classList.add('intro-lock');
   var LOGOS = [{src:'assets/claude.svg'}, {src:'assets/codex.png'}, {src:'assets/grok.svg'}, {src:'assets/gemini.svg'}];
   var MARK = {src:'assets/pando.svg'};
@@ -1522,16 +1522,19 @@ function runIntro(done){
   var ease = function(t){ return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; };
   var eo = function(t){ return 1 - Math.pow(1 - t, 3); };
   var clamp = function(v){ return Math.max(0, Math.min(1, v)); };
-  function start(){
-    if (!MARK.img){ finish(); return; }
+  function place(){
     var m = Math.min(W, H);
     S = Math.round(Math.min(220, m * 0.30)); cx = W / 2; cy = H / 2 - (H > 700 ? 20 : 0);
     R = Math.min(m * 0.30, 300); LS = Math.round(Math.min(72, m * 0.11));
+    LOGOS.forEach(function(l, li){ l.a = -Math.PI / 2 + li * (Math.PI * 2 / LOGOS.length) + (LOGOS.length === 4 ? Math.PI / 4 : 0); l.x = cx + Math.cos(l.a) * R; l.y = cy + Math.sin(l.a) * R; });
+  }
+  function start(){
+    if (!MARK.img){ finish(); return; }
+    size(); place();
     targets = samplePoints(MARK.img, 200, 2, false, 120);
     for (var i = targets.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = targets[i]; targets[i] = targets[j]; targets[j] = t; }
     var per = Math.ceil(targets.length / LOGOS.length), k = 0;
     LOGOS.forEach(function(l, li){
-      l.a = -Math.PI / 2 + li * (Math.PI * 2 / LOGOS.length) + (LOGOS.length === 4 ? Math.PI / 4 : 0); l.x = cx + Math.cos(l.a) * R; l.y = cy + Math.sin(l.a) * R;
       var pts = l.img ? samplePoints(l.img, 96, 2, l.invert, 80) : [];
       for (var n = 0; n < per && k < targets.length; n++, k++){
         var p = pts.length ? pts[Math.floor(Math.random() * pts.length)] : {x:0, y:0, r:236, g:236, b:236}, tg = targets[k];
@@ -1559,7 +1562,7 @@ function runIntro(done){
       ctx.save(); ctx.globalAlpha = mA; ctx.drawImage(MARK.img, x2 - d2 / 2, y2 - d2 / 2, d2, d2); ctx.restore(); }
   }
   function heroMarkRect(){ var b = document.querySelector('.hero-mark').getBoundingClientRect(); return {x:b.left + b.width / 2, y:b.top + b.height / 2, w:b.width}; }
-  function loop(now){ if (ended) return; var t = now - t0; if (fast !== null){ t = fast.from + (now - fast.at) * 6; }
+  function loop(now){ if (ended) return; if (W !== innerWidth || H !== innerHeight) size(); var t = now - t0; if (fast !== null){ t = fast.from + (now - fast.at) * 6; }
     if (t >= 3700 && !cv.classList.contains('clear')){ cv.classList.add('clear'); heroIn(); }
     render(Math.min(t, T_END)); if (t >= T_END){ finish(); return; } raf = requestAnimationFrame(loop); }
   function skip(){ if (fast === null && !ended){ fast = {from:Math.max(performance.now() - t0, 0), at:performance.now()}; } }
