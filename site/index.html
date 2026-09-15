@@ -612,19 +612,15 @@ html.rm .section .wrap>*{opacity:1;transform:none;transition:none}
 html.rm .cur{animation:none}
 
 /* ---- Agents (0.3.2): install any CLI from setup ---- */
-.agents .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);margin-top:48px}
-.agents figure{margin:0;border:1px solid var(--edge);border-radius:var(--r);background:var(--panel);overflow:hidden}
-.agents .grid{align-items:start}
-.agents figure img{display:block;width:100%;height:auto;max-height:400px;object-fit:contain;object-position:center;background:var(--bg);border-bottom:1px solid var(--hair)}
-.agents figcaption{padding:14px 16px 16px;color:var(--ink2);font-size:15px;line-height:1.5}
-.agents figcaption b{color:var(--ink);font-weight:500}
 .agents .roster{display:grid;grid-template-columns:1fr 1fr;gap:20px 28px;margin-top:36px}
 .agents .roster div b{display:block;font-family:var(--font);font-weight:500;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
 .agents .roster div span{display:block;color:var(--ink);font-size:16px;margin-top:8px;line-height:1.55}
 .agents .foot{margin-top:24px;color:var(--ink2);font-size:15px}
-.brainsec .import{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(20px,3vw,40px);align-items:center;margin-top:44px}
-.brainsec .import figure{margin:0;border:1px solid var(--edge);border-radius:var(--r);background:var(--panel);overflow:hidden}
-.brainsec .import .imp-shot{padding:clamp(16px,3vw,34px);background:var(--bg);display:grid;place-items:center;pointer-events:none;user-select:none}
+.brainsec .import{display:grid;grid-template-columns:.85fr 1.35fr;gap:clamp(28px,4vw,64px);align-items:center;margin-top:56px}
+.brainsec .import .scene{margin-top:0}
+.brainsec .srcs{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;color:var(--ink);font-size:15px;line-height:1.5}
+.brainsec .srcs li{position:relative;padding-left:22px}
+.brainsec .srcs li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1px;background:var(--indigo)}
 /* the setup card, same rules as the app's brain-onboarding.css */
 .bo-card{font-family:var(--ui);letter-spacing:0;line-height:1.4;width:100%;max-width:560px;background:var(--panel);border:1px solid #2a2a2a;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.35);padding:26px 28px 22px;color:var(--ink);text-align:left}
 .bo-kicker{font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:14px}
@@ -648,10 +644,82 @@ html.rm .cur{animation:none}
 .bo-primary,.bo-ghost{font-size:14px;font-weight:550;padding:9px 16px;border-radius:8px;border:1px solid transparent;white-space:nowrap}
 .bo-primary{background:var(--indigo);color:#fff}
 .bo-ghost{border-color:#2a2a2a;color:var(--ink2)}
+.bo-group{margin:12px 0 6px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.bo-cli{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 14px;margin-bottom:6px;background:var(--bg);border:1px solid #2a2a2a;border-radius:8px}
+.bo-cli-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.bo-cli-text b{font-weight:550;font-size:14px;color:var(--ink);line-height:1.3}
+.bo-cli-text b em{font-style:normal;font-size:12px;font-weight:400;color:var(--ink2)}
+.bo-cli-text>em{font-style:normal;font-size:12.5px;color:var(--ink2);line-height:1.35}
+.bo-cli code{font-family:var(--mono);font-size:11.5px;color:var(--ink2)}
+.bo-act{flex-shrink:0;display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink2);white-space:nowrap}
+.bo-act.ready{color:var(--green)}
+.bo-switch{flex-shrink:0;width:38px;height:22px;border-radius:999px;background:#2a2a2a;position:relative}
+.bo-switch::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--ink2)}
+
+/* 3D scenes: window replicas, scaled to fit, animated on scroll-in */
+.scene{perspective:1300px;perspective-origin:50% 40%;margin-top:52px}
+.scene.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,44px);align-items:start}
+.shot{position:relative;opacity:0;transform:translateY(34px);transition:transform 1.1s var(--ease),opacity .9s ease;will-change:transform}
+.scene.in .shot{opacity:1}
+.scene.in .shot.l{transform:rotateY(16deg) rotateX(3deg)}
+.scene.in .shot.r{transform:rotateY(-16deg) rotateX(3deg)}
+.scene.in .shot.c{transform:rotateY(-14deg) rotateX(3deg)}
+.shot-in{position:absolute;left:0;top:0;transform-origin:0 0;display:flex;flex-direction:column;background:var(--bg);border:1px solid var(--edge);border-radius:14px;overflow:hidden;box-shadow:0 40px 100px -40px rgba(0,0,0,.9);font-family:var(--ui);letter-spacing:0;color:var(--ink)}
+.shot-in.stage-dark{display:grid;place-items:center;padding:24px}
+.shot-in .bo-card{width:560px;max-width:none}
+.shot-in .win-body{padding:0 10px 10px}
+.shot-in .win-side{width:190px}
+.tglyph{font-family:var(--mono);font-size:9px;font-weight:600;color:var(--ink2)}
+.side-note{padding:4px 10px;font-size:12.5px;color:var(--faint);line-height:1.4}
+.shot-in .term{white-space:nowrap}
+.cap{margin:20px 6px 0;color:var(--ink2);font-size:15px;line-height:1.5}
+.cap b{color:var(--ink);font-weight:500}
+/* agents story: rows land, Install flips on, Continue is pressed, the terminal types */
+.ag-row{opacity:0;transform:translateY(8px)}
+.scene.in .ag-row{animation:agRow .55s var(--ease) both;animation-delay:var(--d)}
+@keyframes agRow{to{opacity:1;transform:none}}
+.scene.in .ag-switch{animation:agSw .3s ease 2.3s both}
+.scene.in .ag-switch::after{animation:agKnob .3s ease 2.3s both}
+@keyframes agSw{to{background:var(--ink)}}
+@keyframes agKnob{to{transform:translateX(16px);background:#0a0a0a}}
+.scene.in .ag-continue{animation:agPress .5s ease 3.2s both}
+@keyframes agPress{50%{transform:scale(.94);background:var(--indigo-h)}}
+.ag-type{display:inline-block;width:0;overflow:hidden;white-space:nowrap;vertical-align:bottom}
+.scene.in .ag-type{animation:agType 2.4s steps(45) 3.9s both}
+@keyframes agType{to{width:45ch}}
+.scene.in .ag-typing{animation:agShow .3s ease 3.9s both}
+@keyframes agShow{to{opacity:1}}
+.ag-cur{display:inline-block;width:7px;height:1.15em;margin-left:1px;background:var(--ink);vertical-align:text-bottom;animation:agBlink 1s steps(2) infinite}
+@keyframes agBlink{50%{opacity:0}}
+/* import story: one line gets unticked, the counts follow */
+.sw{position:relative;display:inline-block;white-space:nowrap}
+.sw i{font-style:inherit;display:block}
+.sw i+i{position:absolute;inset:0;padding:inherit;opacity:0}
+.bo-review-head u i{text-decoration:underline}
+.scene.in .im-untick .bo-box{animation:imBox .3s ease 1.8s both}
+@keyframes imBox{to{background:transparent;border-color:#5d5d5d}}
+.scene.in .im-untick .bo-box::after{animation:imTick .2s ease 1.8s both}
+@keyframes imTick{to{opacity:0}}
+.scene.in .im-untick .bo-check-text b{animation:imText .3s ease 1.8s both}
+@keyframes imText{to{color:var(--ink2);text-decoration:line-through}}
+.scene.in .sw i:first-child{animation:imOut .3s ease 1.9s both}
+.scene.in .sw i+i{animation:imIn .3s ease 1.9s both}
+@keyframes imOut{to{opacity:0}}
+@keyframes imIn{to{opacity:1}}
+.scene.in .im-keep{animation:agPress .5s ease 3.4s both}
+@media (prefers-reduced-motion:reduce){
+  .shot{opacity:1;transition:none}
+  .ag-row{opacity:1;transform:none}
+  .scene .ag-row,.scene .ag-switch,.scene .ag-switch::after,.scene .ag-continue,.scene .ag-type,.scene .ag-typing,.scene .im-untick .bo-box,.scene .im-untick .bo-box::after,.scene .im-untick .bo-check-text b,.scene .sw i,.scene .im-keep{animation:none!important}
+  .ag-type{width:45ch}.ag-typing{opacity:1}.ag-cur{animation:none}
+  .ag-switch{background:var(--ink)}.ag-switch::after{transform:translateX(16px);background:#0a0a0a}
+  .im-untick .bo-box{background:transparent;border-color:#5d5d5d}.im-untick .bo-box::after{opacity:0}.im-untick .bo-check-text b{color:var(--ink2);text-decoration:line-through}
+  .sw i:first-child{opacity:0}.sw i+i{opacity:1}
+}
 @media (max-width:640px){.bo-card{padding:18px}.bo-foot{flex-wrap:wrap}.bo-dots{order:3;flex-basis:100%;margin-top:8px}}
-.brainsec .import h3{font-family:var(--font);font-weight:500;font-size:clamp(24px,2.4vw,32px);letter-spacing:-.015em;line-height:1.15;margin:0}
+.brainsec .import h3{text-wrap:balance;font-family:var(--font);font-weight:500;font-size:clamp(24px,2.4vw,32px);letter-spacing:-.015em;line-height:1.15;margin:0}
 .brainsec .import p{margin-top:12px;color:var(--ink2);font-size:16px;line-height:1.55;max-width:48ch}
-@media (max-width:900px){.agents .grid,.agents .roster,.brainsec .import{grid-template-columns:1fr}}
+@media (max-width:900px){.scene.two,.agents .roster,.brainsec .import{grid-template-columns:1fr}.scene.in .shot.l,.scene.in .shot.r,.scene.in .shot.c{transform:none}}
 </style>
 </head>
 <body>
@@ -912,9 +980,43 @@ html.rm .cur{animation:none}
     <p class="eyebrow">Agents</p>
     <h2 class="big">Any agent you already vibe code with.</h2>
     <p class="lede">Setup lists every coding CLI Pando can run and shows which are on your Mac. Pick the ones you use. Installing opens a terminal with the vendor's own install command typed in. You press Enter. Pando never runs an installer and never holds an account for you.</p>
-    <div class="grid">
-      <figure><img src="assets/0.3.2/agents-step.jpg" alt="The Choose your agents step in Pando setup, listing coding CLIs with Install, Connect and Add switches" loading="lazy"><figcaption><b>Choose your agents.</b> Every CLI shows whether it is installed, connected to the Brain, or ready.</figcaption></figure>
-      <figure><img src="assets/0.3.2/install-terminal.jpg" alt="A Pando terminal pane with an install command typed and waiting" loading="lazy"><figcaption><b>You press Enter.</b> The install command waits on the line. Nothing installs without you.</figcaption></figure>
+    <div class="scene two" data-scene>
+      <div>
+        <div class="shot l"><div class="shot-in stage-dark" data-w="760" data-h="790" aria-hidden="true">
+          <div class="bo-card">
+          <div class="bo-kicker">Set up your Brain &#183; step 3 of 5</div>
+          <h4 class="bo-title">Choose your agents</h4>
+          <p class="bo-sub">Every CLI here runs on your own subscription. Installing opens a terminal with the vendor's command typed in; you press Enter. Connecting adds the Brain to a CLI's own config, with a backup first.</p>
+          <div class="bo-group">Runs in Pando with model, effort and mode controls</div>
+          <div class="bo-cli ag-row" style="--d:0.15s"><span class="bo-cli-text"><b>Claude Code <em>Anthropic</em></b><em>Installed and connected to your Brain</em></span><span class="bo-act ready">&#10003;</span></div>
+          <div class="bo-cli ag-row" style="--d:0.27s"><span class="bo-cli-text"><b>Codex <em>OpenAI</em></b><em>Installed and connected to your Brain</em></span><span class="bo-act ready">&#10003;</span></div>
+          <div class="bo-cli ag-row" style="--d:0.39s"><span class="bo-cli-text"><b>Gemini CLI <em>Google</em></b><em>Installed and connected to your Brain</em></span><span class="bo-act ready">&#10003;</span></div>
+          <div class="bo-cli ag-row" style="--d:0.51s"><span class="bo-cli-text"><b>Grok CLI <em>xAI</em></b><em>Ready</em></span><span class="bo-act ready">&#10003;</span></div>
+          <div class="bo-cli ag-row" style="--d:0.63s"><span class="bo-cli-text"><b>Ollama <em>Local</em></b><em>Ready</em></span><span class="bo-act ready">&#10003;</span></div>
+          <div class="bo-group">Also works in Pando, opens in a terminal pane</div>
+          <div class="bo-cli ag-row" style="--d:0.75s"><span class="bo-cli-text"><b>OpenCode <em>Open source</em></b><em>Ready</em></span><span class="bo-act ready">&#10003;</span></div>
+          <div class="bo-cli ag-row" style="--d:.87s"><span class="bo-cli-text"><b>Aider <em>Open source</em></b><em>Not on this Mac &#183; <code>curl -LsSf https://aider.chat/install.sh | sh</code></em></span><span class="bo-act">Install <span class="bo-switch ag-switch"></span></span></div>
+          <div class="bo-foot"><span class="bo-ghost">Skip for now</span><span class="bo-dots"><i></i><i></i><i class="on"></i><i></i><i></i></span><span class="bo-actions"><span class="bo-primary ag-continue">Continue</span></span></div>
+          </div>
+        </div></div>
+        <p class="cap"><b>Choose your agents.</b> Every CLI shows whether it is installed, connected to the Brain, or ready. Flip Install on anything missing.</p>
+      </div>
+      <div>
+        <div class="shot r"><div class="shot-in" data-w="760" data-h="790" aria-hidden="true">
+          <div class="win-bar"><span class="brand"><svg><use href="#mark"/></svg>PANDO</span><svg class="sb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M9 5v14"/></svg><div class="win-seg"><span>Agent</span><span class="on">Code</span><span>Chat</span></div><span class="win-right"><span class="pill">Tidy</span><span class="pill">Usage</span><span class="pill">Voice off</span></span></div>
+          <div class="win-body">
+            <aside class="win-side"><div class="side-h"><i>&#9662;</i>Menu</div><a>Routines</a><a>Plugins</a><a>Skills</a><a>Brain</a><a>Studio</a><div class="side-h"><i>&#9662;</i>Workspaces<b>+</b></div><a class="ws on">Main <b>1</b></a><div class="side-h"><i>&#9662;</i>Folders</div><span class="side-note">Folders you work in will collect here.</span><div class="side-foot"><span class="avatar">M</span>Maya Okafor</div></aside>
+            <div class="win-stage"><div class="stage-view">
+              <div class="stage-h"><b>Main</b><span>1 terminal</span></div>
+              <div class="panes" style="grid-template-columns:1fr"><div class="pane">
+                <div class="pane-h"><span class="dot live"></span><span class="ico"><b class="tglyph">&gt;_</b></span><span class="name">Terminal</span><span class="ttl">Install Aider</span><span class="acts"><span class="typing ag-typing">&#9679; typing here</span><span>Preview</span><span>+ &#8722; &#8598; &#215;</span></span></div>
+                <div class="term"><div class="ln show"><span class="pre">maya@studio ~ % </span><span class="tx ag-type">curl -LsSf https://aider.chat/install.sh | sh</span><i class="ag-cur"></i></div></div>
+              </div></div>
+            </div></div>
+          </div>
+        </div></div>
+        <p class="cap"><b>You press Enter.</b> The install command waits on the line, typed by Pando and run by you. Nothing installs without you.</p>
+      </div>
     </div>
     <div class="roster">
       <div><b>Full controls</b><span>Claude Code, Codex, Gemini CLI, Grok CLI, Ollama. Model, effort and mode pills.</span></div>
@@ -930,27 +1032,31 @@ html.rm .cur{animation:none}
     <p class="eyebrow">The Brain &#183; one memory for all your vibe coding</p>
     <h2 class="big">A memory that compiles itself.</h2>
     <p class="lede">Agents forget between sessions and know nothing about each other. Pando gives all of them one memory. Every note an agent saves is a source. The compiler links sources into a wiki of compiled understanding, keeps every version, and lets two accounts disagree until an outcome settles it. Plain markdown underneath, on your disk, read by every agent over one bundled MCP server.</p>
-        <div class="import">
-      <figure class="imp-shot" aria-label="Pando setup reviewing lines imported from other assistants as a tick list"><div class="bo-card" aria-hidden="true">
-        <div class="bo-kicker">Set up your Brain &#183; step 4 of 5</div>
-        <h4 class="bo-title">Keep what is true</h4>
-        <p class="bo-sub">Untick anything wrong or private. Ticked lines go into your profile, marked approved by you.</p>
-        <div class="bo-review">
-          <div class="bo-review-head"><span><b>Claude Code</b> &#183; 2 of 3</span><u>Tick all</u></div>
-          <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>I run a two-person bakery in Leeds and do the books myself on Sundays.</b></span></div>
-          <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>Always show me the result, never just say it is done.</b></span></div>
-          <div class="bo-check bo-item"><span class="bo-box"></span><span class="bo-check-text"><b>Morgan prefers dark themes in every app and hates white flashes.</b></span></div>
-          <div class="bo-review-head"><span><b>Codex</b> &#183; 1 of 1</span><u>Untick all</u></div>
-          <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>Keep answers under five sentences unless I ask for detail.</b></span></div>
-          <div class="bo-review-head"><span><b>Pasted from another assistant</b> &#183; 2 of 2</span><u>Untick all</u></div>
-          <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>I have two kids and coach football on Saturdays</b></span></div>
-          <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>I would rather read a table than a paragraph</b></span></div>
-        </div>
-        <div class="bo-foot"><span class="bo-ghost">Skip for now</span><span class="bo-dots"><i></i><i></i><i></i><i class="on"></i><i></i></span><span class="bo-actions"><span class="bo-ghost">Back</span><span class="bo-primary">Keep 5 and continue</span></span></div>
-      </div></figure>
-      <div>
+    <div class="import">
+      <div class="import-text">
         <h3>Bring what your assistants already know.</h3>
         <p>Setup can read the memory Claude Code, Codex and Gemini CLI already keep on your Mac, or a list pasted from ChatGPT, Claude or Gemini in the browser. Every line appears as a tick list. Only ticked lines go into the Brain. Nothing leaves your Mac.</p>
+        <ul class="srcs"><li>Claude Code, Codex and Gemini CLI memory files on this Mac</li><li>A list pasted from ChatGPT, Claude or Gemini</li><li>Untick a line and it never enters the Brain</li></ul>
+      </div>
+      <div class="scene one" data-scene>
+        <div class="shot c"><div class="shot-in stage-dark" data-w="760" data-h="700" aria-hidden="true">
+          <div class="bo-card">
+          <div class="bo-kicker">Set up your Brain &#183; step 4 of 5</div>
+          <h4 class="bo-title">Keep what is true</h4>
+          <p class="bo-sub">Untick anything wrong or private. Ticked lines go into your profile, marked approved by you.</p>
+          <div class="bo-review-head"><span><b>Claude Code</b> &#183; <span class="sw"><i>3 of 3</i><i>2 of 3</i></span></span><u class="sw"><i>Untick all</i><i>Tick all</i></u></div>
+            <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>I run a two-person bakery in Leeds and do the books myself on Sundays.</b></span></div>
+            <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>Always show me the result, never just say it is done.</b></span></div>
+            <div class="bo-check bo-item on im-untick"><span class="bo-box"></span><span class="bo-check-text"><b>Morgan prefers dark themes in every app and hates white flashes.</b></span></div>
+          <div class="bo-review-head"><span><b>Codex</b> &#183; 1 of 1</span><u>Untick all</u></div>
+            <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>Keep answers under five sentences unless I ask for detail.</b></span></div>
+          <div class="bo-review-head"><span><b>Pasted from another assistant</b> &#183; 2 of 2</span><u>Untick all</u></div>
+            <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>I have two kids and coach football on Saturdays</b></span></div>
+            <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>I would rather read a table than a paragraph</b></span></div>
+          <div class="bo-foot"><span class="bo-ghost">Skip for now</span><span class="bo-dots"><i></i><i></i><i></i><i class="on"></i><i></i></span><span class="bo-actions"><span class="bo-ghost">Back</span><span class="bo-primary im-keep sw"><i>Keep 6 and continue</i><i>Keep 5 and continue</i></span></span></div>
+          </div>
+        </div></div>
+        <p class="cap"><b>Keep what is true.</b> One line unticked, five go into your profile, marked approved by you.</p>
       </div>
     </div>
     <div class="sbwrap" id="sbSection"></div>
@@ -1491,9 +1597,24 @@ if (INTRO){
   });
 } else { $('intro').classList.add('off'); window.__introDone = true; }
 
+/* 3D scenes: scale each replica to its column, animate when it scrolls into view */
+function fitShots(){
+  document.querySelectorAll('.shot').forEach(function(sh){
+    var inn = sh.firstElementChild, W = +inn.dataset.w, H = +inn.dataset.h, sc = sh.clientWidth / W;
+    inn.style.width = W + 'px'; inn.style.height = H + 'px'; inn.style.transform = 'scale(' + sc + ')';
+    sh.style.height = Math.round(H * sc) + 'px';
+  });
+}
+fitShots(); addEventListener('resize', fitShots);
+var scenes = document.querySelectorAll('[data-scene]');
+if ('IntersectionObserver' in window && !RM){
+  var so = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('in', e.isIntersecting); }); }, {threshold:0.2});
+  scenes.forEach(function(el){ so.observe(el); });
+} else scenes.forEach(function(el){ el.classList.add('in'); });
+
 /* dev contract */
 function settle(){
-  ScrollTrigger.refresh();
+  fitShots(); ScrollTrigger.refresh();
   if (JUMP !== null){ scrollTo(0, +JUMP || 0); ScrollTrigger.update(); var p = filmST.progress; tl.progress(p); paintOverlays(p); progressBar.style.transform = 'scaleX(' + p + ')'; applyCam(); }
   else { paintOverlays(0); }
   window.__ready = true;
