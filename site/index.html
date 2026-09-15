@@ -15,7 +15,7 @@
   --bg:#0a0a0a; --panel:#151515; --panel2:#101010; --row:#1a1a1a; --chip:#1f1f1f;
   --edge:#2a2a2a; --hair:#242424;
   --ink:#ececec; --ink2:#a8a8a8; --ink3:#8f8f8f; --faint:#5d5d5d;
-  --build:"white-trial-2026-09-15-1745"; --accent:#f4f4f4; --accent-h:#ffffff; --accent-ink:#0a0a0a; --mint:#ececec; --glow:0 0 0 1px rgba(255,255,255,.35),0 0 26px rgba(255,255,255,.28); --green:#3fce8f; --amber:#ffbe6e; --coral:#ff8a7a;
+  --build:"gate-2026-09-15-1820"; --accent:#f4f4f4; --accent-h:#ffffff; --accent-ink:#0a0a0a; --mint:#ececec; --glow:0 0 0 1px rgba(255,255,255,.35),0 0 26px rgba(255,255,255,.28); --green:#3fce8f; --amber:#ffbe6e; --coral:#ff8a7a;
   --r:14px; --r-sm:8px;
   --ease:cubic-bezier(.16,1,.3,1);
   --font:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -817,7 +817,7 @@ html.rm .cur{animation:none}
     <a href="#voice">Voice</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
-    <a class="btn primary dl-direct" href="https://github.com/jbneufeld/pando-releases/releases/download/v0.3.4/Pando-0.3.4-arm64.dmg" download><svg><use href="#i-down"/></svg>Download for Mac</a>
+    <a class="btn primary" href="/account"><svg><use href="#i-down"/></svg>Download for Mac</a>
   </nav>
 </header>
 
@@ -981,7 +981,7 @@ html.rm .cur{animation:none}
       <h1><span class="line"><span>Your agents.</span></span><span class="line"><span>One platform.</span></span><span class="line"><span>One memory.</span></span></h1>
       <p>A vibe coding platform where the agents you already pay for work side by side in real terminals, run on a schedule while you are away, and share one memory you own.</p>
       <div class="hero-cta">
-        <a class="btn primary big dl-direct" href="https://github.com/jbneufeld/pando-releases/releases/download/v0.3.4/Pando-0.3.4-arm64.dmg" download><svg><use href="#i-down"/></svg>Download for Mac</a>
+        <a class="btn primary big" href="/account"><svg><use href="#i-down"/></svg>Download for Mac</a>
         <a class="btn big ghost" href="#brain">See how the Brain works</a>
       </div>
       <div class="hero-engines"><span>Runs the agents already on your Mac</span><span class="logos"><img src="assets/claude.svg" alt="Claude Code" width="20" height="20"><img src="assets/codex.png" alt="Codex" width="20" height="20"><img src="assets/gemini.svg" alt="Gemini CLI" width="20" height="20"><img src="assets/grok.svg" alt="Grok" width="20" height="20"><img src="assets/ollama.svg" alt="Ollama" width="20" height="20" style="filter:invert(1)"></span></div>
@@ -1141,7 +1141,7 @@ html.rm .cur{animation:none}
       </ul>
     </div>
     <div class="dlbar" id="download">
-      <a class="btn primary big dl-direct" id="relLink" href="https://github.com/jbneufeld/pando-releases/releases/download/v0.3.4/Pando-0.3.4-arm64.dmg" download><svg><use href="#i-down"/></svg>Download for Mac</a>
+      <a class="btn primary big" id="relLink" href="/account"><svg><use href="#i-down"/></svg>Download for Mac</a>
       <div class="dl-inc">
         <span class="dl-k">Included</span>
         <div class="dl-item"><svg class="dl-mark"><use href="#mark"/></svg><span><b>Pando</b><em>The Mac app</em></span></div>
@@ -1292,13 +1292,9 @@ function renderPane(name){
 function renderAll(){ for (var k in T) renderPane(k); }
 renderAll();
 
-/* ---------- release feed: keep every download link on the newest DMG ---------- */
-(function(){
-  fetch('https://raw.githubusercontent.com/jbneufeld/pando-releases/main/latest.json', {cache:'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
-    if (!j || !j.url) return;
-    document.querySelectorAll('.dl-direct').forEach(function(a){ a.href = j.url; });
-  }).catch(function(){});
-})();
+/* ---------- the download gate (Jared, 2026-09-15): every Download button goes to the account page.
+   Sign in or start the free trial there; the DMG is offered only once a key exists. The release feed
+   that used to point these buttons straight at the DMG is gone on purpose. ---------- */
 
 /* ---------- iPhone and iPad: a DMG is no use here, so the button sends the link to the Mac ---------- */
 (function(){
@@ -1310,7 +1306,7 @@ renderAll();
   var note = document.createElement('p'); note.className = 'ios-note'; note.textContent = 'Pando is a Mac app. Send the download link to yourself and open it on your Mac.';
   link.parentNode.insertBefore(note, link.nextSibling);
   link.addEventListener('click', function(e){
-    e.preventDefault(); var url = link.href;
+    e.preventDefault(); var url = 'https://www.pandoworkbench.com/account';
     if (navigator.share){ navigator.share({title:'Pando for Mac', text:'Download Pando for Mac', url:url}).catch(function(){}); return; }
     if (navigator.clipboard){ navigator.clipboard.writeText(url).then(function(){ link.lastChild.textContent = 'Link copied'; }).catch(function(){ location.href = 'mailto:?subject=Pando%20for%20Mac&body=' + encodeURIComponent(url); }); }
     else location.href = 'mailto:?subject=Pando%20for%20Mac&body=' + encodeURIComponent(url);
