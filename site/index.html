@@ -158,6 +158,7 @@ html.nobar .lbar{display:none}
 .ln.ok .tx{color:var(--ink2)}
 .ln.dim .tx,.ln.dim .pre{color:var(--faint)}
 .ln.warn .pre,.ln.warn .tx{color:var(--amber)}
+.ln.msg .pre{color:var(--indigo)}.ln.msg .tx{color:#c3c7ff}
 .ln.bad .pre{color:var(--coral)}
 .ln.bad .tx{color:var(--ink2)}
 .ln.brain .pre{color:var(--indigo)}
@@ -988,8 +989,8 @@ html.rm .cur{animation:none}
     <div class="stop left" data-i="0" style="--acc:var(--green)">
       <div class="k"><b>01</b><span>Code</span></div>
       <h2>Vibe code with the agents you already pay for.</h2>
-      <p>You describe the change. The agent writes it. Claude Code, Codex, Gemini CLI, Grok and any agent on your Mac, each in a live shell over a folder you already work in. Split, snap, tidy.</p>
-      <dl><dt>Engines</dt><dd>Anything on your PATH. Claude Code, Codex, Gemini CLI, Grok, Ollama.</dd><dt>Runs on</dt><dd>Your subscriptions, your machine. Nothing proxied.</dd></dl>
+      <p>You describe the change. The agent writes it. Claude Code, Codex, Gemini CLI, Grok and any agent on your Mac, each in a live shell over a folder you already work in. They talk to each other, terminal to terminal, so you never relay a thing.</p>
+      <dl><dt>Engines</dt><dd>Anything on your PATH. Claude Code, Codex, Gemini CLI, Grok, Ollama.</dd><dt>Between panes</dt><dd>One agent messages another and hands work off. Idle panes get it as their next prompt.</dd><dt>Runs on</dt><dd>Your subscriptions, your machine. Nothing proxied.</dd></dl>
     </div>
     <div class="stop right" data-i="1" style="--acc:var(--indigo)">
       <div class="k"><b>02</b><span>Agent</span></div>
@@ -1178,6 +1179,7 @@ html.rm .cur{animation:none}
       <details><summary>What is vibe coding, and is Pando for me?<svg><use href="#i-plus"/></svg></summary><div class="a">Vibe coding is building software by describing it. You say what should change; an agent in a terminal changes it. Pando is the platform those agents run in: real terminals for every agent you already pay for, routines that run while you are away, a gate on anything irreversible, and one memory they all share. If you direct agents rather than type every line yourself, it is for you.</div></details>
       <details><summary>Do I need an API key?<svg><use href="#i-plus"/></svg></summary><div class="a">No. Pando launches the CLIs already installed on your Mac. Sign in to Claude Code, Codex, Gemini CLI, Grok or Ollama the way you always do. Pando never sees a key and never sends a request on your behalf.</div></details>
       <details><summary>What does the approval gate stop?<svg><use href="#i-plus"/></svg></summary><div class="a">Anything you cannot take back: deletes outside the project folder, sending messages, deploys, payments. The agent pauses and files a review card that says what it is, what happens if you approve, and what happens if you say no. Approve, say no, or ask for changes in Pando. Nothing else changes while it waits.</div></details>
+      <details><summary>Can the agents talk to each other?<svg><use href="#i-plus"/></svg></summary><div class="a">Yes. Every terminal in Pando has an inbox. An agent sends another pane a message with one command, and can read what another pane has done. If that pane is idle the message lands as its next prompt. If it is busy, the message waits in a quiet inbox and is read on its next turn. Shell panes only read what they are sent, never run it.</div></details>
       <details><summary>Is Pando Voice included?<svg><use href="#i-plus"/></svg></summary><div class="a">Yes. Every subscription includes Pando Voice, the menu-bar dictation app. Hold Right Option, speak, release, and the words are typed where your cursor is. Transcription runs on your Mac with Apple Speech, so it works offline and needs no key.</div></details>
       <details><summary>Which Macs does it run on?<svg><use href="#i-plus"/></svg></summary><div class="a">Apple Silicon Macs on macOS 14 or newer. You need at least one agent CLI installed: Claude Code, Codex, Gemini CLI, Grok CLI or Ollama.</div></details>
       <details><summary>What happens if I stop paying?<svg><use href="#i-plus"/></svg></summary><div class="a">Your plan renews monthly or yearly, whichever you picked. Cancel anytime from your account and keep access to the end of the period you paid for. Updates are included while the subscription is active. Your Brain is your folder either way.</div></details>
@@ -1223,14 +1225,14 @@ var SCRIPTS = {
     ['q','> ','fix the failing invoice rounding test and tell me why it failed'],
     ['',''],
     ['ok','● ','brain_context(ledger-web)'],
-    ['dim','  ⎿  ','Read profile, ledger-web project note'],
     ['ok','● ','Read(tests/invoice.test.ts)'],
     ['ok','● ','Update(src/money.ts)'],
     ['dim','  ⎿  ','4 additions, 2 removals'],
     ['ok','● ','Bash(npm test)'],
     ['dim','  ⎿  ','148 passed, 0 failed (4.2s)'],
     ['meta','','Test 88 expects half-even rounding on totals. Totals now round half-even.'],
-    ['brain','● ','brain_decision("Round invoice totals half-even")']
+    ['brain','● ','brain_decision("Round invoice totals half-even")'],
+    ['ok','● ','Bash(deck send s2 "Totals round half-even. Use roundTotal().")']
   ],
   codex: [
     ['p','maya@studio ledger-web % ','codex'],
@@ -1238,6 +1240,7 @@ var SCRIPTS = {
     ['q','› ','add a CSV export to the invoices page'],
     ['',''],
     ['ok','• ','brain_context(ledger-web)'],
+    ['msg','▸ ','[message from claude via deck send] Totals round half-even. Use roundTotal().'],
     ['ok','• ','edit  src/pages/invoices.tsx'],
     ['ok','• ','write src/lib/csv.ts'],
     ['ok','• ','exec  npm test'],
