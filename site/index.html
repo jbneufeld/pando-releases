@@ -602,20 +602,16 @@ html.rm .wave i{animation:none;height:60%}
 .incl li{display:flex;gap:12px;padding:11px 0;border-top:1px solid var(--hair);font-size:14.5px;color:var(--ink2)}
 .incl li svg{width:16px;height:16px;flex:none;color:var(--green);margin-top:3px}
 .incl li b{color:var(--ink);font-weight:500}
-.dlbar{margin:18px auto 0;max-width:680px;border:1px solid var(--edge);border-radius:16px;background:var(--panel2);padding:20px 24px}
-.dlbar .row{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.dlbar .v{font-size:15px;color:var(--ink)}
-.dlbar .v b{font-weight:600}
-.dlbar .v small{display:block;font-size:13px;color:var(--faint);margin-top:4px}
-.dlbar .fine{margin-top:14px;font-size:13px;color:var(--ink2);line-height:1.55}
-.dlbar .fine b{color:var(--amber);font-weight:500}
-.dlbar .ios-note{color:var(--ink);margin-top:14px}
-.dl-sha{margin-top:10px;font-size:12.5px;color:var(--ink2)}
-.dl-notes{margin-top:10px;font-size:13px;color:var(--faint)}
-.pricing h2.big{max-width:none}
-.dl-sha summary{cursor:pointer;color:var(--faint)}
-.dl-sha code{display:block;font-family:var(--mono);font-size:12px;word-break:break-all;margin-top:6px;color:var(--ink2)}
-.dl-sha a{display:inline-block;margin-top:6px;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.dlbar{margin:18px auto 0;max-width:680px;border:1px solid var(--edge);border-radius:16px;background:var(--panel2);padding:28px 28px 26px;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center}
+.dlbar .btn.big{min-width:min(320px,100%)}
+.dl-inc{display:flex;align-items:center;justify-content:center;gap:clamp(16px,3vw,36px);flex-wrap:wrap}
+.dl-k{font-family:var(--font);font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.dl-item{display:flex;align-items:center;gap:12px;text-align:left}
+.dl-mark{width:34px;height:34px;flex:none;fill:var(--ink)}
+.dl-item b{display:block;font-weight:500;font-size:15px;color:var(--ink)}
+.dl-item em{display:block;font-style:normal;font-size:13px;color:var(--ink2)}
+.dlbar .ios-note{margin:0;font-size:14px;color:var(--ink2);max-width:40ch}
+@media (max-width:640px){.dlbar{padding:22px 18px}.dl-inc{flex-direction:column;align-items:flex-start;gap:14px}.dl-k{align-self:center}}
 
 /* faq */
 .faq .list{margin-top:40px;border-top:1px solid var(--hair)}
@@ -1144,13 +1140,12 @@ html.rm .cur{animation:none}
       </ul>
     </div>
     <div class="dlbar" id="download">
-      <div class="row">
-        <div class="v"><b>Pando <span id="relVersion">0.3.4</span></b> &#183; <span id="relDate">Sep 14, 2026</span><small><span id="relSize">192 MB</span> &#183; macOS 14 or newer &#183; Apple Silicon &#183; at least one agent CLI installed</small></div>
-        <a class="btn primary" id="relLink" href="https://github.com/jbneufeld/pando-releases/releases/download/v0.3.4/Pando-0.3.4-arm64.dmg" download><svg><use href="#i-down"/></svg>Download for Mac</a>
+      <a class="btn primary big dl-direct" id="relLink" href="https://github.com/jbneufeld/pando-releases/releases/download/v0.3.4/Pando-0.3.4-arm64.dmg" download><svg><use href="#i-down"/></svg>Download for Mac</a>
+      <div class="dl-inc">
+        <span class="dl-k">Included</span>
+        <div class="dl-item"><svg class="dl-mark"><use href="#mark"/></svg><span><b>Pando</b><em>The Mac app</em></span></div>
+        <div class="dl-item"><svg class="dl-mark"><use href="#vmark"/></svg><span><b>Pando Voice</b><em>Dictation, installs from inside Pando</em></span></div>
       </div>
-      <p class="fine">Pando Voice installs from inside Pando once you subscribe.</p>
-      <details class="dl-sha"><summary>File and checksum</summary><code id="relFile">Pando-0.3.4-arm64.dmg</code><code id="relSha">590b2371786341f1a6e4c3ef1099f91fbc00b22160187d7fc1a7037d623154ac</code><a href="https://github.com/jbneufeld/pando-releases/releases">All releases</a></details>
-      <p class="dl-notes" id="relNotes">Signed and notarized by Apple. Pando opens with a normal double-click now.</p>
     </div>
   </div>
 </section>
@@ -1296,19 +1291,11 @@ function renderPane(name){
 function renderAll(){ for (var k in T) renderPane(k); }
 renderAll();
 
-/* ---------- release feed ---------- */
+/* ---------- release feed: keep every download link on the newest DMG ---------- */
 (function(){
-  var fmtMB = function(b){ return (b / 1048576).toFixed(0) + ' MB'; };
-  $('relSize').textContent = fmtMB(201286052);
   fetch('https://raw.githubusercontent.com/jbneufeld/pando-releases/main/latest.json', {cache:'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
-    if (!j || !j.version) return;
-    $('relVersion').textContent = j.version;
-    if (j.filename) $('relFile').textContent = j.filename;
-    if (j.size) $('relSize').textContent = fmtMB(j.size);
-    if (j.sha256) $('relSha').textContent = j.sha256;
-    if (j.url){ $('relLink').href = j.url; document.querySelectorAll('.dl-direct').forEach(function(a){ a.href = j.url; }); }
-    if (j.notes){ $('relNotes').textContent = j.notes; $('relNotes').hidden = false; }
-    if (j.publishedAt){ var d = new Date(j.publishedAt); if (!isNaN(d)) $('relDate').textContent = d.toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'}); }
+    if (!j || !j.url) return;
+    document.querySelectorAll('.dl-direct').forEach(function(a){ a.href = j.url; });
   }).catch(function(){});
 })();
 
@@ -1318,9 +1305,9 @@ renderAll();
   if (!IOS) return;
   document.documentElement.classList.add('ios');
   var link = $('relLink'); link.removeAttribute('download'); link.innerHTML = '<svg><use href="#i-down"/></svg>Send yourself the link';
-  document.querySelectorAll('a.dl-direct').forEach(function(a){ a.classList.remove('dl-direct'); a.removeAttribute('download'); a.href = '#download'; a.innerHTML = '<svg><use href="#i-down"/></svg>Made for Mac'; });
-  var note = document.createElement('p'); note.className = 'fine ios-note'; note.textContent = 'Pando is a Mac app. Send the download link to yourself and open it on your Mac.';
-  link.closest('.dlbar').insertBefore(note, link.closest('.row').nextSibling);
+  document.querySelectorAll('a.dl-direct').forEach(function(a){ if (a === link) return; a.classList.remove('dl-direct'); a.removeAttribute('download'); a.href = '#download'; a.innerHTML = '<svg><use href="#i-down"/></svg>Made for Mac'; });
+  var note = document.createElement('p'); note.className = 'ios-note'; note.textContent = 'Pando is a Mac app. Send the download link to yourself and open it on your Mac.';
+  link.parentNode.insertBefore(note, link.nextSibling);
   link.addEventListener('click', function(e){
     e.preventDefault(); var url = link.href;
     if (navigator.share){ navigator.share({title:'Pando for Mac', text:'Download Pando for Mac', url:url}).catch(function(){}); return; }
