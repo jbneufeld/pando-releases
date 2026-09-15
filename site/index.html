@@ -15,7 +15,7 @@
   --bg:#0a0a0a; --panel:#151515; --panel2:#101010; --row:#1a1a1a; --chip:#1f1f1f;
   --edge:#2a2a2a; --hair:#242424;
   --ink:#ececec; --ink2:#a8a8a8; --ink3:#8f8f8f; --faint:#5d5d5d;
-  --accent:#3bab7b; --accent-h:#46bd8a; --accent-ink:#061710; --mint:#5ecf9f; --green:#3fce8f; --amber:#ffbe6e; --coral:#ff8a7a;
+  --accent:#f4f4f4; --accent-h:#ffffff; --accent-ink:#0a0a0a; --mint:#ececec; --glow:0 0 0 1px rgba(255,255,255,.35),0 0 26px rgba(255,255,255,.28); --green:#3fce8f; --amber:#ffbe6e; --coral:#ff8a7a;
   --r:14px; --r-sm:8px;
   --ease:cubic-bezier(.16,1,.3,1);
   --font:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -56,8 +56,8 @@ p{margin:0}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:0 20px;height:46px;border-radius:999px;border:1px solid var(--edge);background:var(--panel);color:var(--ink);font-weight:500;font-size:16px;letter-spacing:.005em;white-space:nowrap;transition:background .2s,border-color .2s,transform .15s var(--ease),color .2s}
 .btn:hover{background:#1c1c1c;border-color:#383838}
 .btn:active{transform:translateY(1px) scale(.985)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn.primary:hover{background:var(--accent-h);border-color:var(--accent-h)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);box-shadow:var(--glow)}
+.btn.primary:hover{background:var(--accent-h);border-color:var(--accent-h);box-shadow:0 0 0 1px rgba(255,255,255,.5),0 0 36px rgba(255,255,255,.42)}
 .btn.ghost{background:transparent}
 .btn svg{width:18px;height:18px}
 svg use{fill:inherit}
@@ -71,11 +71,11 @@ html.intro-lock,html.intro-lock body{overflow:hidden!important}
 /* ---------- header ---------- */
 :root{--bar:52px}
 html.nobar{--bar:0px}
-.lbar{position:fixed;left:0;right:0;top:0;z-index:calc(var(--z-header) + 1);height:var(--bar);display:flex;align-items:center;justify-content:center;gap:16px;padding:0 48px 0 var(--gutter);background:var(--accent);font-family:var(--font);font-weight:500;font-size:16px;color:var(--accent-ink);overflow:hidden}
+.lbar{position:fixed;left:0;right:0;top:0;z-index:calc(var(--z-header) + 1);height:var(--bar);display:flex;align-items:center;justify-content:center;gap:16px;padding:0 48px 0 var(--gutter);background:var(--accent);font-family:var(--font);font-weight:500;font-size:16px;color:var(--accent-ink);overflow:visible;box-shadow:0 0 40px rgba(255,255,255,.22)}
 .lbar b{color:var(--accent-ink);font-weight:600}
 .lbar .ld{flex:none;width:9px;height:9px;border-radius:50%;background:var(--amber)}
 .lbar a{flex:none;padding:7px 16px;border-radius:999px;background:var(--accent-ink);color:var(--mint);font-weight:600;font-size:14px;white-space:nowrap}
-.lbar a:hover{background:#0f2a1f}
+.lbar a:hover{background:#2a2a2a}
 .lbar .lx{position:absolute;right:calc(var(--gutter) - 12px);top:0;height:100%;padding:0 12px;background:none;border:0;color:rgba(6,23,16,.7);font:inherit;font-size:22px;cursor:pointer}
 .lbar .lx:hover{color:var(--accent-ink)}
 html.nobar .lbar{display:none}
@@ -163,7 +163,7 @@ html.nobar .lbar{display:none}
 .ln.ok .tx{color:var(--ink2)}
 .ln.dim .tx,.ln.dim .pre{color:var(--faint)}
 .ln.warn .pre,.ln.warn .tx{color:var(--amber)}
-.ln.msg .pre{color:var(--mint)}.ln.msg .tx{color:#b9f0d6}
+.ln.msg .pre{color:var(--mint)}.ln.msg .tx{color:var(--ink)}
 .ln.bad .pre{color:var(--coral)}
 .ln.bad .tx{color:var(--ink2)}
 .ln.brain .pre{color:var(--mint)}
@@ -225,7 +225,7 @@ html.nobar .lbar{display:none}
 .rp-work ul{margin:0;padding-left:20px;font-size:13.5px;line-height:1.6;color:var(--ink)}
 .rp-actions{display:flex;align-items:center;gap:10px;padding:12px 16px;border-top:1px solid var(--edge);font-size:13px;font-weight:500;color:var(--ink2)}
 .rp-actions span{padding:6px 12px;border-radius:10px}
-.rp-actions .rp-approve{background:var(--accent);color:var(--accent-ink);font-weight:600;padding:8px 16px;border-radius:999px;transform-origin:50% 50%}
+.rp-actions .rp-approve{background:var(--accent);color:var(--accent-ink);box-shadow:var(--glow);font-weight:600;padding:8px 16px;border-radius:999px;transform-origin:50% 50%}
 .rp-actions .rp-no{color:var(--coral)}
 .rp-actions .rp-spacer{flex:1;padding:0}
 /* lines */
@@ -317,7 +317,7 @@ html.nobar .lbar{display:none}
 .stop dt{font-family:var(--font);font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);padding-top:3px}
 .stop dd{margin:0;color:var(--ink2)}
 .stop .btn{margin-top:20px;height:42px;padding:0 18px;font-size:14px}
-.stop .btn.acc{background:var(--acc,var(--accent));border-color:transparent;color:#0d0d0d;font-weight:600}
+.stop .btn.acc{background:var(--acc,var(--accent));border-color:transparent;color:#0d0d0d;font-weight:600;box-shadow:var(--glow)}
 .stop .btn.acc.dark{color:var(--accent-ink)}
 
 .dust{position:absolute;inset:0;z-index:0;pointer-events:none}
@@ -492,7 +492,7 @@ html.rm .wave i{animation:none;height:60%}
 .tab b{display:block;font-family:var(--disp);font-size:22px;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
 .tab span{display:block;font-size:14px;margin-top:3px;line-height:1.45}
 .tab:hover{background:rgba(255,255,255,.03)}
-.tab[aria-selected="true"]{border-left-color:var(--mint);background:rgba(59,171,123,.08)}
+.tab[aria-selected="true"]{border-left-color:var(--mint);background:rgba(255,255,255,.06)}
 .mini{position:relative}
 .mini .win{position:relative;left:auto;top:auto;transform:none;width:100%;height:min(560px,68vh);will-change:auto}
 .mini .panes{grid-template-columns:1fr 1fr}
@@ -590,7 +590,7 @@ html.rm .wave i{animation:none;height:60%}
 .bill{display:inline-flex;padding:4px;border:1px solid var(--edge);border-radius:999px;background:var(--bg)}
 .bill button{border:0;background:transparent;color:var(--ink2);padding:8px 16px;border-radius:999px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s}
 .bill button.on{background:var(--ink);color:#0d0d0d}
-.bill button em{font-style:normal;font-size:11px;padding:2px 8px;border-radius:999px;background:rgba(59,171,123,.18);color:var(--mint)}
+.bill button em{font-style:normal;font-size:11px;padding:2px 8px;border-radius:999px;background:rgba(255,255,255,.12);color:var(--ink)}
 .bill button.on em{background:rgba(13,13,13,.12);color:#0d0d0d}
 .price{display:flex;align-items:baseline;gap:12px;margin-top:26px}
 .price b{font-family:var(--disp);font-weight:500;font-size:clamp(60px,7vw,96px);letter-spacing:-.04em;line-height:1}
@@ -600,7 +600,7 @@ html.rm .wave i{animation:none;height:60%}
 .pricing .plan .cta .btn{width:100%;justify-content:center}
 .incl{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column}
 .incl li{display:flex;gap:12px;padding:11px 0;border-top:1px solid var(--hair);font-size:14.5px;color:var(--ink2)}
-.incl li svg{width:16px;height:16px;flex:none;color:var(--green);margin-top:3px}
+.incl li svg{width:16px;height:16px;flex:none;color:var(--ink);margin-top:3px}
 .incl li b{color:var(--ink);font-weight:500}
 .dlbar{margin:18px auto 0;max-width:680px;border:1px solid var(--edge);border-radius:16px;background:var(--panel2);padding:28px 28px 26px;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center}
 .dlbar .btn.big{min-width:min(320px,100%);display:inline-flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;width:auto!important}
@@ -693,7 +693,7 @@ html.rm .cur{animation:none}
 .bo-dots i.on{background:var(--ink)}
 .bo-actions{display:flex;gap:8px}
 .bo-primary,.bo-ghost{font-size:14px;font-weight:550;padding:9px 16px;border-radius:8px;border:1px solid transparent;white-space:nowrap}
-.bo-primary{background:var(--accent);color:var(--accent-ink)}
+.bo-primary{background:var(--accent);color:var(--accent-ink);box-shadow:var(--glow)}
 .bo-ghost{border-color:#2a2a2a;color:var(--ink2)}
 .bo-group{margin:12px 0 6px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
 .bo-cli{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 14px;margin-bottom:6px;background:var(--bg);border:1px solid #2a2a2a;border-radius:8px}
@@ -829,7 +829,7 @@ html.rm .cur{animation:none}
       <div class="world" id="world">
 
         <!-- 01 CODE -->
-        <div class="screen" data-i="0" style="--acc:var(--green)">
+        <div class="screen" data-i="0" style="--acc:var(--ink)">
           <div class="glow"></div><div class="marquee">Code</div><i class="lamp l"></i><i class="lamp r"></i>
           <div class="win" aria-hidden="true">
             <div class="win-bar"><span class="brand"><svg><use href="#mark"/></svg>PANDO</span><svg class="sb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M9 5v14"/></svg><div class="win-seg"><span>Agent</span><span class="on">Code</span><span>Chat</span></div><span class="win-right"><span class="pill">Tidy</span><span class="pill">Usage</span></span></div>
@@ -849,7 +849,7 @@ html.rm .cur{animation:none}
         </div>
 
         <!-- 02 AGENT -->
-        <div class="screen" data-i="1" style="--acc:var(--mint)">
+        <div class="screen" data-i="1" style="--acc:var(--ink)">
           <div class="glow"></div><div class="marquee">Agent</div><i class="lamp l"></i><i class="lamp r"></i>
           <div class="win" aria-hidden="true">
             <div class="win-bar"><span class="brand"><svg><use href="#mark"/></svg>PANDO</span><svg class="sb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M9 5v14"/></svg><div class="win-seg"><span class="on">Agent</span><span>Code</span><span>Chat</span></div><span class="win-right"><span class="pill">Tidy</span><span class="pill">Usage</span></span></div>
@@ -896,7 +896,7 @@ html.rm .cur{animation:none}
         </div>
 
         <!-- 04 BRAIN -->
-        <div class="screen" data-i="3" style="--acc:var(--mint)">
+        <div class="screen" data-i="3" style="--acc:var(--ink)">
           <div class="glow"></div><div class="marquee">Brain</div><i class="lamp l"></i><i class="lamp r"></i>
           <div class="win" aria-hidden="true">
             <div class="win-bar"><span class="brand"><svg><use href="#mark"/></svg>PANDO</span><svg class="sb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M9 5v14"/></svg><div class="win-seg"><span>Agent</span><span>Code</span><span>Chat</span></div><span class="win-right"><span class="pill">Tidy</span><span class="pill">Usage</span></span></div>
@@ -952,7 +952,7 @@ html.rm .cur{animation:none}
         </div>
 
         <!-- 06 VOICE -->
-        <div class="screen" data-i="5" style="--acc:var(--mint)">
+        <div class="screen" data-i="5" style="--acc:var(--ink)">
           <div class="glow"></div><div class="marquee">Voice</div><i class="lamp l"></i><i class="lamp r"></i>
           <div class="win" aria-hidden="true">
             <div class="win-bar"><span class="brand"><svg><use href="#mark"/></svg>PANDO</span><svg class="sb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M9 5v14"/></svg><div class="win-seg"><span>Agent</span><span class="on">Code</span><span>Chat</span></div><span class="win-right"><span class="pill">Tidy</span><span class="pill">Usage</span></span></div>
@@ -986,13 +986,13 @@ html.rm .cur{animation:none}
       <div class="hero-engines"><span>Runs the agents already on your Mac</span><span class="logos"><img src="assets/claude.svg" alt="Claude Code" width="20" height="20"><img src="assets/codex.png" alt="Codex" width="20" height="20"><img src="assets/gemini.svg" alt="Gemini CLI" width="20" height="20"><img src="assets/grok.svg" alt="Grok" width="20" height="20"><img src="assets/ollama.svg" alt="Ollama" width="20" height="20" style="filter:invert(1)"></span></div>
     </div>
 
-    <div class="stop left" data-i="0" style="--acc:var(--green)">
+    <div class="stop left" data-i="0" style="--acc:var(--ink)">
       <div class="k"><b>01</b><span>Code</span></div>
       <h2>Vibe code with the agents you already pay for.</h2>
       <p>You describe the change. The agent writes it. Claude Code, Codex, Gemini CLI, Grok and any agent on your Mac, each in a live shell over a folder you already work in. They talk to each other, terminal to terminal, so you never relay a thing.</p>
       <dl><dt>Engines</dt><dd>Anything on your PATH. Claude Code, Codex, Gemini CLI, Grok, Ollama.</dd><dt>Between panes</dt><dd>One agent messages another and hands work off. Idle panes get it as their next prompt.</dd><dt>Runs on</dt><dd>Your subscriptions, your machine. Nothing proxied.</dd></dl>
     </div>
-    <div class="stop right" data-i="1" style="--acc:var(--mint)">
+    <div class="stop right" data-i="1" style="--acc:var(--ink)">
       <div class="k"><b>02</b><span>Agent</span></div>
       <h2>Teammates on a schedule.</h2>
       <p>Name an agent, give it a brief, put it on a routine. It runs while you are away and hands back a card you can read in ten seconds.</p>
@@ -1004,7 +1004,7 @@ html.rm .cur{animation:none}
       <p>Talk to any installed engine without a project. Same Brain, same gates. Nothing touches your disk unless you say so.</p>
       <dl><dt>Engines</dt><dd>Any that are installed.</dd><dt>Memory</dt><dd>Brain on, so it knows your quotes, your projects, your rules.</dd></dl>
     </div>
-    <div class="stop right" data-i="3" style="--acc:var(--mint)">
+    <div class="stop right" data-i="3" style="--acc:var(--ink)">
       <div class="k"><b>04</b><span>Brain</span></div>
       <h2>One memory for every session.</h2>
       <p>Every note an agent saves is a source. The compiler links them into understanding every agent reads, keeps versions, and keeps rivals when two accounts disagree. Switch agents, keep the context.</p>
@@ -1016,7 +1016,7 @@ html.rm .cur{animation:none}
       <p>Delete, send, deploy, pay. The agent stops and files a card that says what this is, what happens if you say yes, and what happens if you say no. Every turn ends in a card with Undo.</p>
       <dl><dt>Gates</dt><dd>Delete outside the folder, send, deploy, pay.</dd><dt>Undo</dt><dd>Every turn, files put back exactly.</dd></dl>
     </div>
-    <div class="stop right" data-i="5" style="--acc:var(--mint)">
+    <div class="stop right" data-i="5" style="--acc:var(--ink)">
       <div class="k"><b>06</b><span>Voice</span></div>
       <h2>Hold a key. Speak. It lands at your cursor.</h2>
       <p>Pando Voice comes with your subscription. Hold Right Option, talk, release, and the cleaned-up words are typed into whatever has focus, terminals included.</p>
@@ -1494,8 +1494,12 @@ function runIntro(done){
   var DPR = Math.min(devicePixelRatio || 1, 1.5), W = 0, H = 0;
   function size(){ W = innerWidth; H = innerHeight; cv.width = W * DPR; cv.height = H * DPR; cv.style.width = W + 'px'; cv.style.height = H + 'px'; ctx.setTransform(DPR, 0, 0, DPR, 0, 0); if (particles && particles.length) place(); }
   size(); cv.classList.remove('off'); document.documentElement.classList.add('intro-lock');
-  var LOGOS = [{src:'assets/claude.svg'}, {src:'assets/codex.png'}, {src:'assets/grok.svg'}, {src:'assets/gemini.svg'}];
-  var MARK = {src:'assets/pando.svg'};
+  /* Sources come from the page itself, never from asset paths: a host that inlines the images
+     (as Audos does) keeps them working, and the mark is the same symbol the hero draws. */
+  var engineSrc = {}; document.querySelectorAll('.hero-engines img').forEach(function(im){ engineSrc[im.getAttribute('alt')] = im.getAttribute('src'); });
+  var LOGOS = ['Claude Code', 'Codex', 'Grok', 'Gemini CLI'].map(function(n){ return {src:engineSrc[n] || ''}; });
+  var markSym = document.getElementById('mark');
+  var MARK = {src:markSym ? 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="' + markSym.getAttribute('viewBox') + '" fill="#ececec">' + markSym.innerHTML + '</svg>') : 'assets/pando.svg'};
   var loads = LOGOS.concat([MARK]).map(function(l){ return new Promise(function(res){ var im = new Image(); im.onload = function(){ l.img = im; res(); }; im.onerror = res; im.src = l.src; }); });
   Promise.all(loads).then(start);
   function samplePoints(img, size, step, invert, minA){
@@ -1610,7 +1614,7 @@ tl.to(T, {gate:lineEnd('gate', GATE_SPLIT - 1), duration:3, onUpdate:function(){
   .call(function(){ $('dot-gate').classList.add('wait'); }, null, 76.4)
   .to('#dimmer', {opacity:1, duration:1.2}, 76.5)
   .to(gate, {autoAlpha:1, y:0, scale:1, duration:1.2, ease:'power3.out'}, 76.5)
-  .to(rpApprove, {scale:0.94, backgroundColor:'#46bd8a', duration:0.35}, 79.2)
+  .to(rpApprove, {scale:0.94, backgroundColor:'#ffffff', duration:0.35}, 79.2)
   .to(rpApprove, {scale:1, duration:0.35}, 79.55)
   .to(gate, {autoAlpha:0, y:-16, scale:0.97, duration:0.8, ease:'power2.in'}, 80.3)
   .to('#dimmer', {opacity:0, duration:0.8}, 80.3)
