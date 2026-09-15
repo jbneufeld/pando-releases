@@ -438,7 +438,7 @@ html.rm .hero-copy{position:relative;left:auto;top:auto;transform:none;margin:0 
 .screen .sb-log,.screen .sb-bars,.screen .sb-chart{height:96px}
 .screen .sb-footer{display:none}
 /* in the section: full width */
-.brainsec .sbwrap{margin-top:clamp(80px,9vw,136px);border:1px solid var(--edge);border-radius:var(--r);overflow:hidden;background:var(--bg)}
+.brainsec .sbwrap{margin-top:44px;border:1px solid var(--edge);border-radius:var(--r);overflow:hidden;background:var(--bg)}
 .brainsec .sbwrap .sb{height:auto}
 @media (max-width:900px){.sb-panels{grid-template-columns:1fr}.sb-panels section{border-right:0;border-bottom:1px solid var(--sb-line)}.sb-metrics{gap:12px 28px}}
 
@@ -667,8 +667,7 @@ html.rm .cur{animation:none}
 .agents .roster div b{display:block;font-family:var(--font);font-weight:500;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
 .agents .roster div span{display:block;color:var(--ink);font-size:16px;margin-top:8px;line-height:1.55}
 .agents .foot{margin-top:24px;color:var(--ink2);font-size:15px}
-.brainsec .import{display:grid;grid-template-columns:.85fr 1.35fr;gap:clamp(28px,4vw,64px);align-items:center;margin-top:56px}
-.brainsec .import .scene{margin-top:0}
+.brainsec .import{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,64px);align-items:start;margin-top:clamp(72px,8vw,120px);padding-top:clamp(40px,4vw,56px);border-top:1px solid var(--hair)}
 .brainsec .srcs{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;color:var(--ink);font-size:15px;line-height:1.5}
 .brainsec .srcs li{position:relative;padding-left:22px}
 .brainsec .srcs li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1px;background:var(--indigo)}
@@ -1086,33 +1085,14 @@ html.rm .cur{animation:none}
     <p class="eyebrow">The Brain &#183; one memory for all your vibe coding</p>
     <h2 class="big">A memory that compiles itself.</h2>
     <p class="lede">Agents forget between sessions and know nothing about each other. Pando gives all of them one memory. Every note an agent saves is a source. The compiler links sources into a wiki of compiled understanding, keeps every version, and lets two accounts disagree until an outcome settles it. Plain markdown underneath, on your disk, read by every agent over one bundled MCP server.</p>
+    <div class="sbwrap" id="sbSection"></div>
     <div class="import">
+      <h3>Bring what your assistants already know.</h3>
       <div class="import-text">
-        <h3>Bring what your assistants already know.</h3>
         <p>Setup can read the memory Claude Code, Codex and Gemini CLI already keep on your Mac, or a list pasted from ChatGPT, Claude or Gemini in the browser. Every line appears as a tick list. Only ticked lines go into the Brain. Nothing leaves your Mac.</p>
         <ul class="srcs"><li>Claude Code, Codex and Gemini CLI memory files on this Mac</li><li>A list pasted from ChatGPT, Claude or Gemini</li><li>Untick a line and it never enters the Brain</li></ul>
       </div>
-      <div class="scene one" data-scene>
-        <div class="shot c"><div class="shot-in stage-dark" data-w="760" data-h="700" aria-hidden="true">
-          <div class="bo-card">
-          <div class="bo-kicker">Set up your Brain &#183; step 4 of 5</div>
-          <h4 class="bo-title">Keep what is true</h4>
-          <p class="bo-sub">Untick anything wrong or private. Ticked lines go into your profile, marked approved by you.</p>
-          <div class="bo-review-head"><span><b>Claude Code</b> &#183; <span class="sw"><i>3 of 3</i><i>2 of 3</i></span></span><u class="sw"><i>Untick all</i><i>Tick all</i></u></div>
-            <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>I run a two-person bakery in Leeds and do the books myself on Sundays.</b></span></div>
-            <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>Always show me the result, never just say it is done.</b></span></div>
-            <div class="bo-check bo-item on im-untick"><span class="bo-box"></span><span class="bo-check-text"><b>Morgan prefers dark themes in every app and hates white flashes.</b></span></div>
-          <div class="bo-review-head"><span><b>Codex</b> &#183; 1 of 1</span><u>Untick all</u></div>
-            <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>Keep answers under five sentences unless I ask for detail.</b></span></div>
-          <div class="bo-review-head"><span><b>Pasted from another assistant</b> &#183; 2 of 2</span><u>Untick all</u></div>
-            <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>I have two kids and coach football on Saturdays</b></span></div>
-            <div class="bo-check bo-item on"><span class="bo-box"></span><span class="bo-check-text"><b>I would rather read a table than a paragraph</b></span></div>
-          <div class="bo-foot"><span class="bo-ghost">Skip for now</span><span class="bo-dots"><i></i><i></i><i></i><i class="on"></i><i></i></span><span class="bo-actions"><span class="bo-ghost">Back</span><span class="bo-primary im-keep sw"><i>Keep 6 and continue</i><i>Keep 5 and continue</i></span></span></div>
-          </div>
-        </div></div>
-      </div>
     </div>
-    <div class="sbwrap" id="sbSection"></div>
   </div>
 </section>
 
