@@ -34,6 +34,7 @@ html.lenis,html.lenis body{height:auto}
    kills position:sticky, which is the whole film. Keep html/body plain. */
 html{background:#0a0a0a!important;color-scheme:dark!important}
 html,body{height:auto!important;overflow:visible!important}
+body{position:static!important;top:auto!important;left:auto!important;right:auto!important;width:auto!important;transform:none!important}
 html{overflow-x:clip!important}
 html.intro-lock{overflow:hidden!important}
 body{margin:0;font-family:var(--font);font-size:17px;line-height:1.6;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
@@ -346,12 +347,12 @@ html.mob .vp{position:relative;inset:auto;height:auto;perspective:none;overflow:
 html.mob .world,html.mob .progress,html.mob .chapters,html.mob .dust{display:none}
 html.mob .hero-copy{position:relative;left:auto;top:auto;transform:none;width:auto;margin:0 auto;padding-inline:var(--gutter)}
 html.mob .hero-copy h1 .line{overflow:hidden}
-html.mob .hero-mark{animation:mobMark 1.1s var(--ease) both}
-html.mob .hero-copy h1 .line>span{animation:mobLine 1s var(--ease) both .25s}
-html.mob .hero-copy h1 .line:nth-child(2)>span{animation-delay:.38s}
-html.mob .hero-copy h1 .line:nth-child(3)>span{animation-delay:.51s}
-html.mob .hero-copy>p,html.mob .hero-cta,html.mob .hero-engines{animation:mobBit .9s var(--ease) both .75s}
-html.mob .hero-cta{animation-delay:.85s}html.mob .hero-engines{animation-delay:.95s}
+html.mob:not(.hasintro) .hero-mark{animation:mobMark 1.1s var(--ease) both}
+html.mob:not(.hasintro) .hero-copy h1 .line>span{animation:mobLine 1s var(--ease) both .25s}
+html.mob:not(.hasintro) .hero-copy h1 .line:nth-child(2)>span{animation-delay:.38s}
+html.mob:not(.hasintro) .hero-copy h1 .line:nth-child(3)>span{animation-delay:.51s}
+html.mob:not(.hasintro) .hero-copy>p,html.mob:not(.hasintro) .hero-cta,html.mob:not(.hasintro) .hero-engines{animation:mobBit .9s var(--ease) both .75s}
+html.mob:not(.hasintro) .hero-cta{animation-delay:.85s}html.mob:not(.hasintro) .hero-engines{animation-delay:.95s}
 @keyframes mobMark{from{opacity:0;transform:scale(.6)}}
 @keyframes mobLine{from{transform:translateY(110%)}}
 @keyframes mobBit{from{opacity:0;transform:translateY(14px)}}
@@ -1664,7 +1665,8 @@ gsap.ticker.add(function(){ mx += (tmx - mx) * 0.05; my += (tmy - my) * 0.05; vp
   requestAnimationFrame(f); })();
 
 /* intro wiring */
-var INTRO = JUMP === null && !NOINTRO && !MOBILE;
+var INTRO = JUMP === null && !NOINTRO;
+if (INTRO) document.documentElement.classList.add('hasintro');
 var heroBits = heroCopy.querySelectorAll('p, .hero-cta, .hero-engines'), heroLines = heroCopy.querySelectorAll('h1 .line > span');
 if (INTRO){
   scrollTo(0, 0); if (lenis) lenis.stop();
