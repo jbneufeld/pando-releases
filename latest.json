@@ -1,9 +1,9 @@
 {
-  "version": "0.3.6",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.6/Pando-0.3.6-arm64.dmg",
-  "filename": "Pando-0.3.6-arm64.dmg",
-  "size": 200180454,
-  "sha256": "4e37574752e61a1ac88a331ec337246eb58bd634c8d8b8d73218ea3b34c4ee8b",
-  "notes": "A new shell: modes as sidebar rows, framed terminals with a glow on the active one, a status bar, and a Brain illustration that fills the page. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-16T01:01:12Z"
+  "version": "0.3.7",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.7/Pando-0.3.7-arm64.dmg",
+  "filename": "Pando-0.3.7-arm64.dmg",
+  "size": 200190652,
+  "sha256": "61238ba5e5dc191ecfd313dfa23177d476e3f1fb07dcafa6f432c1c78fc245a2",
+  "notes": "When a free trial ends, Pando says so and takes you to payment: the key is re-checked from a day before the end date, and the license card comes back with Subscribe and Check again. The same key comes back to life once you subscribe. Signed and notarized by Apple.",
+  "publishedAt": "2026-09-16T02:05:47Z"
 }
