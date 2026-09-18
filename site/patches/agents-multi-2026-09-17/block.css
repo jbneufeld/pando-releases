@@ -1,0 +1,14 @@
+/* ---- Many agents, one workspace (2026-09-17): a 2x2 grid of four engines in one folder, closing the Agents section ---- */
+.multi .panes{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.multi .roster{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 28px;margin-top:36px}
+.multi .roster div b{display:block;font-family:var(--font);font-weight:500;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.multi .roster div span{display:block;color:var(--ink);font-size:16px;margin-top:8px;line-height:1.55}
+@media (max-width:900px){
+  .multi .roster{grid-template-columns:1fr}
+  .multi .panes .pane{display:flex}
+  .multi .shot-in .term{font-size:12px;white-space:normal}
+  .multi .shot-in .ln{white-space:pre-wrap}
+}
+.agents .multi{margin-top:clamp(72px,8vw,120px);padding-top:clamp(40px,4vw,56px);border-top:1px solid var(--hair)}
+.agents .multi h3{text-wrap:balance;font-family:var(--font);font-weight:500;font-size:clamp(24px,2.4vw,32px);letter-spacing:-.015em;line-height:1.15;margin:0}
+.agents .multi .import-head p{margin:0;color:var(--ink2);font-size:16px;line-height:1.55;max-width:44ch}

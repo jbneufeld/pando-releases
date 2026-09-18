@@ -1,0 +1,59 @@
+    <div class="multi" id="workspaces">
+      <div class="import-head">
+        <h3>Four agents. One folder. One screen.</h3>
+        <p>Open up to 12 terminals in a workspace and pick the agent for each one. They work the same folder at the same time, and you watch all of them.</p>
+      </div>
+      <div class="scene" data-scene>
+        <div class="shot"><div class="shot-in" data-w="1280" data-h="660" data-mw="640" data-mh="640" aria-hidden="true">
+          <div class="win-bar"><span class="brand"><svg><use href="#mark"/></svg>PANDO</span><svg class="fold"><use href="#i-side"/></svg><span class="win-right"><span class="pill"><svg><use href="#i-usage"/></svg>Usage</span><span class="pill voice"><svg><use href="#i-voice"/></svg>Voice</span><span class="bell"><svg><use href="#i-bell"/></svg></span></span></div>
+          <div class="win-body">
+            <aside class="win-side"><nav class="modes"><span class="mode on"><svg><use href="#i-code"/></svg>Code</span><span class="mode"><svg><use href="#i-agents"/></svg>Agents</span><span class="mode"><svg><use href="#i-chat"/></svg>Chat</span><span class="mode"><svg><use href="#i-brain"/></svg>Brain</span></nav><div class="side-h"><i>&#9662;</i>Workspaces<b>+</b></div><a class="ws on">ledger-web <b>4</b></a><a class="ws">marketing-site <b>2</b></a><div class="side-h"><i>&#9662;</i>Folders</div><a class="ws on" style="background:none">ledger-web</a><div class="side-h tools"><i>&#9662;</i>Tools</div><a>Routines</a><a>Plugins</a><a>Skills</a><a>Studio</a><div class="side-foot"><span class="avatar">M</span>Maya Okafor<svg><use href="#i-gear"/></svg></div></aside>
+            <div class="win-stage"><div class="stage-view">
+              <div class="stage-h"><b>ledger-web</b><span>4 terminals</span><span class="acts"><span class="tbtn"><svg><use href="#i-layout"/></svg>Layout</span><span class="pbtn"><svg><use href="#i-plus"/></svg>New session</span></span></div>
+              <div class="panes">
+                <div class="pane focused"><div class="pane-h"><span class="dot live"></span><span class="ico"><img src="assets/claude.svg" alt=""></span><span class="name">Claude Code</span><span class="ttl">Fix rounding test</span><span class="acts"><span>Preview</span><span class="x">+ &#8722; &#8598; &#215;</span></span></div><div class="term">
+                  <div class="ln p show"><span class="pre">maya@studio ledger-web % </span><span class="tx">claude</span></div>
+                  <div class="ln q show ag-row" style="--d:.2s"><span class="pre">&gt; </span><span class="tx">fix the failing invoice rounding test</span></div>
+                  <div class="ln ok show ag-row" style="--d:.6s"><span class="pre">&#9679; </span><span class="tx">Read(tests/invoice.test.ts)</span></div>
+                  <div class="ln ok show ag-row" style="--d:1s"><span class="pre">&#9679; </span><span class="tx">Update(src/money.ts)</span></div>
+                  <div class="ln ok show ag-row" style="--d:1.4s"><span class="pre">&#9679; </span><span class="tx">Bash(npm test)</span></div>
+                  <div class="ln dim show ag-row" style="--d:1.8s"><span class="pre">  &#9083;  </span><span class="tx">148 passed, 0 failed</span></div>
+                  <div class="ln ok show ag-row" style="--d:2.4s"><span class="pre">&#9679; </span><span class="tx">Bash(deck send s2 "Totals round half-even.")</span></div>
+                </div></div>
+                <div class="pane"><div class="pane-h"><span class="dot live"></span><span class="ico"><img src="assets/codex.png" alt=""></span><span class="name">Codex</span><span class="ttl">CSV export</span><span class="acts"><span>Preview</span><span class="x">+ &#8722; &#8598; &#215;</span></span></div><div class="term">
+                  <div class="ln p show"><span class="pre">maya@studio ledger-web % </span><span class="tx">codex</span></div>
+                  <div class="ln q show ag-row" style="--d:.35s"><span class="pre">&#8250; </span><span class="tx">add a CSV export to the invoices page</span></div>
+                  <div class="ln ok show ag-row" style="--d:.8s"><span class="pre">&#8226; </span><span class="tx">edit  src/pages/invoices.tsx</span></div>
+                  <div class="ln ok show ag-row" style="--d:1.25s"><span class="pre">&#8226; </span><span class="tx">write src/lib/csv.ts</span></div>
+                  <div class="ln msg show ag-row" style="--d:2.9s"><span class="pre">&#9656; </span><span class="tx">[message from claude via deck send] Totals round half-even.</span></div>
+                  <div class="ln ok show ag-row" style="--d:3.4s"><span class="pre">&#8226; </span><span class="tx">exec  npm test</span></div>
+                  <div class="ln dim show ag-row" style="--d:3.8s"><span class="pre">      </span><span class="tx">151 passed, 0 failed</span></div>
+                </div></div>
+                <div class="pane"><div class="pane-h"><span class="dot live"></span><span class="ico"><img src="assets/gemini.svg" alt=""></span><span class="name">Gemini CLI</span><span class="ttl">Release notes</span><span class="acts"><span>Preview</span><span class="x">+ &#8722; &#8598; &#215;</span></span></div><div class="term">
+                  <div class="ln p show"><span class="pre">maya@studio ledger-web % </span><span class="tx">gemini</span></div>
+                  <div class="ln q show ag-row" style="--d:.5s"><span class="pre">&gt; </span><span class="tx">write release notes for 1.4</span></div>
+                  <div class="ln ok show ag-row" style="--d:1.1s"><span class="pre">&#10003; </span><span class="tx">Shell git log 1.3.0..HEAD --oneline</span></div>
+                  <div class="ln dim show ag-row" style="--d:1.5s"><span class="pre">   </span><span class="tx">12 commits</span></div>
+                  <div class="ln ok show ag-row" style="--d:2.1s"><span class="pre">&#10003; </span><span class="tx">WriteFile CHANGELOG.md</span></div>
+                  <div class="ln dim show ag-row" style="--d:2.5s"><span class="pre">   </span><span class="tx">+38 lines</span></div>
+                </div></div>
+                <div class="pane"><div class="pane-h"><span class="dot live"></span><span class="ico"><img src="assets/grok.svg" alt=""></span><span class="name">Grok CLI</span><span class="ttl">Review the export</span><span class="acts"><span>Preview</span><span class="x">+ &#8722; &#8598; &#215;</span></span></div><div class="term">
+                  <div class="ln p show"><span class="pre">maya@studio ledger-web % </span><span class="tx">grok</span></div>
+                  <div class="ln q show ag-row" style="--d:.65s"><span class="pre">&gt; </span><span class="tx">review the CSV export diff</span></div>
+                  <div class="ln ok show ag-row" style="--d:1.7s"><span class="pre">&#10003; </span><span class="tx">git diff src/lib/csv.ts</span></div>
+                  <div class="ln dim show ag-row" style="--d:2.1s"><span class="pre">   </span><span class="tx">+64 lines</span></div>
+                  <div class="ln meta show ag-row" style="--d:3s"><span class="pre"></span><span class="tx">Commas and quotes are escaped. Looks right.</span></div>
+                </div></div>
+              </div>
+            </div></div>
+          </div>
+          <div class="win-status"><span><i class="sdot ok"></i>4 sessions<i>/</i>Stored on this Mac</span><span><svg><use href="#i-brain"/></svg>Shared memory<i>&#8599;</i></span></div>
+        </div></div>
+        <p class="cap"><b>One workspace, four agents.</b> Claude Code passes a finding to Codex without you.</p>
+      </div>
+      <div class="roster">
+        <div><b>Up to 12 terminals</b><span>Pick 1, 2, 4, 6, 8, 10 or 12 for a workspace. Layout evens out the grid. Save it as a preset and open it in one click.</span></div>
+        <div><b>A different agent in each</b><span>Claude Code in one pane, Codex in the next, Gemini CLI, Grok or a plain shell beside them. Each pane can start in its own subfolder.</span></div>
+        <div><b>They hand work to each other</b><span>One agent messages another. The other pane gets it as its next prompt, so you never copy and paste between them.</span></div>
+      </div>
+    </div>
