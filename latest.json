@@ -1,9 +1,9 @@
 {
-  "version": "0.3.10",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.10/Pando-0.3.10-arm64.dmg",
-  "filename": "Pando-0.3.10-arm64.dmg",
-  "size": 200192324,
-  "sha256": "f5ed8619de4ba9ec6582af85457ec9e3171103b68d3081359d4ceba47b17206a",
-  "notes": "Attach a screenshot without leaving the keyboard: the camera button on any terminal opens a tray of recent Desktop screenshots, and Cmd+Shift+V attaches the newest. Plus a weather chip in the top bar once you set a location. Carries 0.3.9's section rail and sequential terminal arrivals. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-20T21:40:00Z"
+  "version": "0.3.11",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.11/Pando-0.3.11-arm64.dmg",
+  "filename": "Pando-0.3.11-arm64.dmg",
+  "size": 200203815,
+  "sha256": "f6050fe9b04e390fc65bd7cee60cd732d6c05fd92ef1e2d3855ede7166cc1cdc",
+  "notes": "Terminals that were already running are found again instead of being restarted. Pando carries its own tmux so it works on a Mac that has never had one, and now uses yours to reach sessions your tmux created. Signed and notarized by Apple.",
+  "publishedAt": "2026-09-20T22:40:00Z"
 }
