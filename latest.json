@@ -1,9 +1,9 @@
 {
-  "version": "0.3.8",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.8/Pando-0.3.8-arm64.dmg",
-  "filename": "Pando-0.3.8-arm64.dmg",
-  "size": 200174945,
-  "sha256": "450acf3513d1c585a5ed0c96b3c7499bfb75937e87b404cb19e069d5b06cb3dc",
-  "notes": "Thirteen coding agents can now share Pando's Brain, up from four. Cursor CLI, OpenCode, Hermes, Qwen Code, Droid, GitHub Copilot CLI, Amp, Goose and Mistral Vibe join Claude Code, Codex, Gemini CLI and Grok CLI. Connecting one backs its config up first and changes only Pando's own entry. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-20T20:05:00Z"
+  "version": "0.3.9",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.9/Pando-0.3.9-arm64.dmg",
+  "filename": "Pando-0.3.9-arm64.dmg",
+  "size": 200168246,
+  "sha256": "6ee2ef4acd6bc3ab1bdceebbb4f93f01f9d9686dcdde0ffe464a6ea6dc76e1f4",
+  "notes": "Compact expanding navigation for Code, Agents, Chat and Brain, with smooth sequential terminal entrances and reduced-motion support. Signed and notarized by Apple.",
+  "publishedAt": "2026-09-20T20:50:46Z"
 }
