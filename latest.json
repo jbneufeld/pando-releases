@@ -1,9 +1,9 @@
 {
-  "version": "0.3.7",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.7/Pando-0.3.7-arm64.dmg",
-  "filename": "Pando-0.3.7-arm64.dmg",
-  "size": 200190652,
-  "sha256": "61238ba5e5dc191ecfd313dfa23177d476e3f1fb07dcafa6f432c1c78fc245a2",
-  "notes": "When a free trial ends, Pando says so and takes you to payment: the key is re-checked from a day before the end date, and the license card comes back with Subscribe and Check again. The same key comes back to life once you subscribe. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-16T02:05:47Z"
+  "version": "0.3.8",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.8/Pando-0.3.8-arm64.dmg",
+  "filename": "Pando-0.3.8-arm64.dmg",
+  "size": 200174945,
+  "sha256": "450acf3513d1c585a5ed0c96b3c7499bfb75937e87b404cb19e069d5b06cb3dc",
+  "notes": "Thirteen coding agents can now share Pando's Brain, up from four. Cursor CLI, OpenCode, Hermes, Qwen Code, Droid, GitHub Copilot CLI, Amp, Goose and Mistral Vibe join Claude Code, Codex, Gemini CLI and Grok CLI. Connecting one backs its config up first and changes only Pando's own entry. Signed and notarized by Apple.",
+  "publishedAt": "2026-09-20T20:05:00Z"
 }
