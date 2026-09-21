@@ -1,9 +1,9 @@
 {
-  "version": "0.3.11",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.11/Pando-0.3.11-arm64.dmg",
-  "filename": "Pando-0.3.11-arm64.dmg",
-  "size": 200203815,
-  "sha256": "f6050fe9b04e390fc65bd7cee60cd732d6c05fd92ef1e2d3855ede7166cc1cdc",
-  "notes": "Terminals that were already running are found again instead of being restarted. Pando carries its own tmux so it works on a Mac that has never had one, and now uses yours to reach sessions your tmux created. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-20T22:40:00Z"
+  "version": "0.3.12",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.12/Pando-0.3.12-arm64.dmg",
+  "filename": "Pando-0.3.12-arm64.dmg",
+  "size": 200204860,
+  "sha256": "3893366f0653a9e07c97b892fe533327db4067c5e1d1fc97c38c9cc540d93570",
+  "notes": "Signed and notarized Pando 0.3.12 for Apple Silicon. Includes the reviewed Brain/session and checkout readiness fixes.",
+  "publishedAt": "2026-09-21T19:17:00Z"
 }
