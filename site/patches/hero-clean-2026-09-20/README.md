@@ -69,3 +69,33 @@ headless from that file at 1440x900 and 390x844:
 
 The same behaviour was demonstrated on the LIVE page before Jared chose it, by intercepting
 the canvas draw calls in the browser. Nothing was published.
+
+## Outcome: LIVE 2026-09-20 on Jared's word
+
+Applied by Otto to `components/PandoLandingPage.tsx` and published as task #140105.
+Verified on www.pandoworkbench.com after publishing, signed out:
+
+| Check | Result |
+|---|---|
+| Computed `--build` | `hero-clean-2026-09-20` between quote characters |
+| Hero, scroll 0 | 549 light pixels on the dust canvas (dust only, no grid) |
+| 0.78 screens down | 83,869 light pixels, floor fading back in |
+| iPhone 390x844 | unchanged, zero console errors |
+| $55 / $24 / $228 / checkout=lifetime / refund FAQ / founding-offer-status | identical counts to the pre-publish live page |
+| /account | HTTP 200. Founding seats: remaining 20, claimed 0 |
+
+### Two traps worth knowing
+
+1. **Otto's first pass inserted the `hero` variable but did not apply it** to either
+   alpha line, and still bumped the build stamp. The page therefore *claimed* the
+   change while drawing the grid exactly as before. Reading the diff would not have
+   caught it; counting light pixels on the canvas did (132,302 at scroll 0 before,
+   549 after). Otto said plainly that it could only confirm a file was modified.
+2. **The hosted page applies the patch as a runtime `.replace()` chain** on the page
+   source string at module load, not as a direct edit of those lines. It works, and
+   costs nothing per frame, but it fails silently if the underlying line ever changes.
+   Anyone editing that draw loop again must re-check the replace literals.
+
+Publishing needed a task named `Publish workspace draft → live (hero-clean-2026-09-20)`:
+a stale draft task from an earlier session ("Revoke PANDO-3QSS-...") sat on the board and
+the platform demands the exact task name whenever two drafts are staged at once.
