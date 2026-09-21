@@ -15,7 +15,7 @@
   --bg:#0a0a0a; --panel:#151515; --panel2:#101010; --row:#1a1a1a; --chip:#1f1f1f;
   --edge:#2a2a2a; --hair:#242424;
   --ink:#ececec; --ink2:#a8a8a8; --ink3:#8f8f8f; --faint:#5d5d5d;
-  --build:"workbench-2026-09-15-2109"; --accent:#f4f4f4; --accent-h:#ffffff; --accent-ink:#0a0a0a; --mint:#ececec; --glow:0 0 0 1px rgba(255,255,255,.35),0 0 26px rgba(255,255,255,.28); --green:#3fce8f; --amber:#ffbe6e; --coral:#ff8a7a;
+  --build:"halo-brain-2026-09-21"; --accent:#f4f4f4; --accent-h:#ffffff; --accent-ink:#0a0a0a; --mint:#ececec; --glow:0 0 0 1px rgba(255,255,255,.35),0 0 26px rgba(255,255,255,.28); --green:#3fce8f; --amber:#ffbe6e; --coral:#ff8a7a;
   --r:14px; --r-sm:8px;
   --ease:cubic-bezier(.16,1,.3,1);
   --font:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -428,71 +428,28 @@ html.rm .screen{position:relative;margin:0;transform:none!important;opacity:1!im
 html.rm .stop{position:relative;top:auto;bottom:auto;left:auto;right:auto;transform:none;opacity:1;visibility:visible;margin:24px auto 0}
 html.rm .hero-copy{position:relative;left:auto;top:auto;transform:none;margin:0 auto;padding-inline:var(--gutter);width:auto;max-width:900px}
 
-/* ---------- Second Brain, drawn the way the app draws it ---------- */
-.sb{--sb-line:rgba(236,236,236,.16);--sb-dim:rgba(236,236,236,.57);color:var(--ink);background:var(--bg);width:100%;height:100%;overflow:hidden;padding:18px 26px 22px;font:13px var(--mono);box-sizing:border-box}
-.sb *{box-sizing:border-box}
-.sb-header{display:flex;flex-wrap:wrap;align-items:center;gap:18px;padding-bottom:12px}
-.sb h1{font-family:var(--ui);font-weight:600;font-size:26px;letter-spacing:-.005em;margin:0 0 4px;line-height:1.1}
-.sb small{display:block;font-size:11.5px;color:var(--sb-dim);line-height:1.7;letter-spacing:.04em}
-.sb-status{margin-left:auto;font-size:11.5px;letter-spacing:.06em;display:flex;align-items:center;gap:8px}
-.sb-status i{width:5px;height:5px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green)}
-.sb-btn{border:1px solid var(--sb-line);background:transparent;padding:8px 12px;border-radius:3px;font:inherit;color:inherit}
-.sb-toolbar{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;border-top:1px solid var(--sb-line);border-bottom:1px solid var(--sb-line);padding:6px 0}
-.sb-toolbar nav{display:flex;gap:8px}
-.sb-toolbar nav span{padding:7px 12px;color:var(--sb-dim);border-radius:3px}
-.sb-toolbar nav span.selected{color:var(--ink);background:rgba(236,236,236,.07)}
-.sb-toolbar nav b{font-weight:400;color:var(--amber);margin-left:8px}
-.sb-toolbar>small{align-self:center;color:var(--sb-dim)}
-.sb-metrics{display:flex;flex-wrap:wrap;gap:16px 52px;padding:14px 4px 14px}
-.sb-metrics div{display:flex;flex-direction:column;gap:6px}
-.sb-metrics span{font-size:11.5px;color:var(--sb-dim);letter-spacing:.09em}
-.sb-metrics strong{font-size:17px;font-weight:500}
-.sb-graph{border:1px solid var(--sb-line);background:radial-gradient(ellipse at 52% 40%,rgba(236,236,236,.03),transparent 70%)}
-.sb-stage-label{display:flex;justify-content:space-between;padding:16px 20px 0;font-size:11px;letter-spacing:.12em;color:var(--sb-dim)}
-.sb-graph svg{width:100%;display:block;height:auto}
-.sb svg text{fill:var(--ink);font:12px var(--mono)}
-.sb svg .sb-dim{fill:var(--sb-dim);font-size:11px}
-.sb-edge{fill:none;stroke:var(--ink);stroke-width:.5;opacity:.05}
-.sb-edge.has-data{opacity:.16}
-.sb-feature>rect:first-child,.sb-op>rect:first-child,.sb-output>rect:first-child{fill:var(--bg);stroke:var(--sb-line)}
-.sb-fill{fill:var(--green)}
-.sb-op-bar{fill:var(--sb-dim)}
-.sb-op-0 .sb-op-bar{fill:var(--green)}
-.sb-op-2 .sb-op-bar{fill:var(--amber)}
-.sb-particle{fill:var(--ink)}
-.sb-particle.sb-idle{opacity:.28}
-.sb-stage-caption{border-top:1px solid var(--sb-line);padding:10px 16px;color:var(--sb-dim);font-size:12px}
-.sb-panels{display:grid;grid-template-columns:1.4fr 1fr .8fr;border:1px solid var(--sb-line);border-top:0}
-.sb-panels section{padding:18px;min-width:0;border-right:1px solid var(--sb-line)}
-.sb-panels section:last-child{border:0}
-.sb h3{margin:0 0 10px;font-size:12px;font-weight:400;letter-spacing:.08em}
-.sb h3>span{float:right;color:var(--sb-dim);font-size:11px;letter-spacing:0}
-.sb-log{height:150px;overflow:hidden}
-.sb-log>div{display:flex;gap:10px;font-size:11.5px;line-height:1.9}
-.sb-log time{color:var(--sb-dim);flex-shrink:0}
-.sb-bars{height:150px;overflow:hidden}
-.sb-bars>div{display:flex;align-items:center;gap:7px;font-size:12px;min-height:22px}
-.sb-bars span{width:42%;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;flex-shrink:0;color:var(--sb-dim)}
-.sb-bars i{height:8px;background:var(--green)}
-.sb-bars b{font-weight:400}
-.sb-chart{height:150px;width:100%;overflow:visible}
-.sb-chart polyline{stroke:var(--green);stroke-width:1.5;fill:none}
-.sb-axis{stroke:var(--sb-line);fill:none;stroke-width:.7}
-.sb-footer{display:flex;align-items:center;gap:12px;border-top:1px solid var(--sb-line);padding-top:14px;margin-top:14px}
-.sb-footer strong{font-family:var(--ui);font-weight:600;font-size:14px}
-.sb-footer>span:last-child{margin-left:auto;font-size:11px;color:var(--sb-dim)}
-/* in the film screen: compact */
-.screen .sb{padding:12px 18px 14px;font-size:11.5px}
-.screen .sb h1{font-size:20px}
-.screen .sb-metrics{padding:10px 4px;gap:10px 34px}
-.screen .sb-metrics strong{font-size:14px}
-.screen .sb-panels section{padding:12px}
-.screen .sb-log,.screen .sb-bars,.screen .sb-chart{height:96px}
-.screen .sb-footer{display:none}
-/* in the section: full width */
+/* ---------- Second Brain: the Halo, drawn the way the app draws it ---------- */
+/* The Brain as a ring in space: every dot a note in its section's colour, every chord through the
+   middle a link, small electrodes riding the chords (a crawl at rest, a dash while the engine has that
+   trail hot). Same layout rules as the app's haloWorld.ts, on a 2D canvas. */
+.halo{position:relative;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--ink)}
+.halo canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.halo-top{position:absolute;left:14px;right:14px;top:12px;display:flex;align-items:center;gap:10px;pointer-events:none}
+.halo-search{flex:none;border:1px solid var(--edge);border-radius:8px;padding:6px 10px;font-size:11.5px;color:var(--faint);background:rgba(20,20,20,.7);min-width:150px}
+.halo-seg{margin:0 auto;display:flex;background:#141414;border:1px solid var(--hair);border-radius:999px;padding:3px}
+.halo-seg span{padding:4px 12px;border-radius:999px;font-size:12px;color:var(--ink2)}
+.halo-seg span.on{background:#222;color:var(--ink)}
+.halo-reset{flex:none;border:1px solid var(--edge);border-radius:8px;padding:6px 10px;font-size:11.5px;color:var(--ink2);background:rgba(20,20,20,.7)}
+.halo-foot{position:absolute;left:14px;right:14px;bottom:10px;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11px;letter-spacing:.06em;color:var(--ink2);pointer-events:none}
+.halo-foot i{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.halo-foot b{font-weight:500;color:var(--amber);border-left:1px solid var(--hair);padding-left:14px}
+.halo-hint{position:absolute;left:14px;bottom:32px;font-size:10.5px;color:var(--faint);pointer-events:none}
+.halo-label{position:absolute;transform:translate(-50%,0);pointer-events:none;font-size:11px;font-weight:600;color:rgba(238,243,249,.92);text-shadow:0 1px 6px rgba(0,0,0,.95);white-space:nowrap}
+/* in the section: a fixed stage */
+.brainsec .sbwrap .halo{height:clamp(380px,46vw,620px)}
+.brainsec .sbwrap .halo-search{min-width:190px}
+
 .brainsec .sbwrap{margin-top:44px;border:1px solid var(--edge);border-radius:var(--r);overflow:hidden;background:var(--bg)}
-.brainsec .sbwrap .sb{height:auto}
-@media (max-width:900px){.sb-panels{grid-template-columns:1fr}.sb-panels section{border-right:0;border-bottom:1px solid var(--sb-line)}.sb-metrics{gap:12px 28px}}
 
 /* ---------- Pando Voice pill, drawn from the app's HUDPill.swift: a 236 by 48 capsule on graphite,
    the mark, a hairline divider, two lines, and eleven level bars in the app's own blue. --s scales every
@@ -638,7 +595,15 @@ html.rm .wave i:nth-child(even){height:calc(var(--s)*20px)}
 @media (max-width:900px){.manifesto .grid{grid-template-columns:1fr}}
 
 /* pricing: one card, download bar below */
-.pricing .plan{margin:40px auto 0;max-width:680px;border:1px solid var(--edge);border-radius:20px;background:var(--panel);padding:clamp(26px,3.5vw,40px)}
+.pricing .founder{margin:40px auto 0;max-width:680px;border:1px solid rgba(255,190,110,.38);border-radius:20px;background:var(--panel);padding:clamp(26px,3.5vw,40px);box-shadow:0 0 30px rgba(255,190,110,.08)}
+.founder-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.founder-tag{display:inline-flex;align-items:center;gap:9px;font-family:var(--font);font-weight:500;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.founder-tag i{flex:none;width:9px;height:9px;border-radius:50%;background:var(--amber)}
+.founder-left{font-family:var(--font);font-size:14px;color:var(--ink2)}
+.founder-note{margin-top:10px;color:var(--ink2);font-size:15px;max-width:54ch}
+.pricing .founder .cta{margin-top:22px}
+.pricing .founder .price{margin-top:20px}
+.pricing .plan{margin:18px auto 0;max-width:680px;border:1px solid var(--edge);border-radius:20px;background:var(--panel);padding:clamp(26px,3.5vw,40px)}
 .plan-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .plan-name{font-family:var(--font);font-size:22px;font-weight:600;letter-spacing:-.01em}
 .plan-name span{display:block;font-size:14px;font-weight:400;color:var(--ink2);margin-top:4px}
@@ -722,7 +687,18 @@ html.rm .cur{animation:none}
 .agents .roster div b{display:block;font-family:var(--font);font-weight:500;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
 .agents .roster div span{display:block;color:var(--ink);font-size:16px;margin-top:8px;line-height:1.55}
 .agents .foot{margin-top:24px;color:var(--ink2);font-size:15px}
-.brainsec .import{margin-top:clamp(72px,8vw,120px);padding-top:clamp(40px,4vw,56px);border-top:1px solid var(--hair)}
+/* ---- Many agents, one workspace (2026-09-17): a 2x2 grid of four engines in one folder, closing the Agents section ---- */
+.multi .panes{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.multi .roster{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 28px;margin-top:36px}
+.multi .roster div b{display:block;font-family:var(--font);font-weight:500;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.multi .roster div span{display:block;color:var(--ink);font-size:16px;margin-top:8px;line-height:1.55}
+@media (max-width:900px){
+  .multi .roster{grid-template-columns:1fr}
+  .multi .panes .pane{display:flex}
+  .multi .shot-in .term{font-size:12px;white-space:normal}
+  .multi .shot-in .ln{white-space:pre-wrap}
+}
+.brainsec .import,.agents .multi{margin-top:clamp(72px,8vw,120px);padding-top:clamp(40px,4vw,56px);border-top:1px solid var(--hair)}
 .import-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:end}
 .brainsec .srcs{margin:32px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .src{border:1px solid var(--edge);border-radius:var(--r);background:var(--panel);padding:22px 22px 24px}
@@ -821,8 +797,8 @@ html.rm .cur{animation:none}
   .sw i:first-child{opacity:0}.sw i+i{opacity:1}
 }
 @media (max-width:640px){.bo-card{padding:18px}.bo-foot{flex-wrap:wrap}.bo-dots{order:3;flex-basis:100%;margin-top:8px}}
-.brainsec .import h3{text-wrap:balance;font-family:var(--font);font-weight:500;font-size:clamp(24px,2.4vw,32px);letter-spacing:-.015em;line-height:1.15;margin:0}
-.brainsec .import p{margin:0;color:var(--ink2);font-size:16px;line-height:1.55;max-width:44ch}
+.brainsec .import h3,.agents .multi h3{text-wrap:balance;font-family:var(--font);font-weight:500;font-size:clamp(24px,2.4vw,32px);letter-spacing:-.015em;line-height:1.15;margin:0}
+.brainsec .import p,.agents .multi .import-head p{margin:0;color:var(--ink2);font-size:16px;line-height:1.55;max-width:44ch}
 @media (max-width:900px){.scene.two,.agents .roster,.import-head,.brainsec .srcs{grid-template-columns:1fr}}
 </style>
 </head>
@@ -869,7 +845,7 @@ html.rm .cur{animation:none}
 <canvas id="intro" aria-hidden="true"></canvas>
 <noscript><style>#intro{display:none}</style></noscript>
 
-<div class="lbar" id="launch"><span class="ld"></span><span><b>Start free.</b> Try Pando for 14 days, then $24 a month, or $19 a month billed yearly.</span><a href="#pricing">See pricing</a><button type="button" class="lx" id="launchX" aria-label="Hide this banner">&#215;</button></div>
+<div class="lbar" id="launch"><span class="ld"></span><span><b>Founding licence: $55 once, Pando for life.</b> Twenty of them, until October 5. After that it is $24 a month.</span><a href="#pricing">See pricing</a><button type="button" class="lx" id="launchX" aria-label="Hide this banner">&#215;</button></div>
 <header class="site-header">
   <a class="brand" href="#top" aria-label="Pando home"><svg><use href="#mark"/></svg>PANDO</a>
   <nav class="nav" aria-label="Site">
@@ -1087,7 +1063,7 @@ html.rm .cur{animation:none}
     <div class="stop right" data-i="5" style="--acc:var(--ink)">
       <div class="k"><b>06</b><span>Voice</span></div>
       <h2>Hold a key. Speak. It lands at your cursor.</h2>
-      <p>Pando Voice comes with your subscription. Hold Right Option, talk, release, and the cleaned-up words are typed into whatever has focus, terminals included.</p>
+      <p>Pando Voice comes with Pando. Hold Right Option, talk, release, and the cleaned-up words are typed into whatever has focus, terminals included.</p>
       <dl><dt>Runs</dt><dd>On device with Apple Speech. No API key. Works offline.</dd><dt>Cleanup</dt><dd>Fillers out, punctuation in, your dictionary, spoken commands.</dd></dl>
     </div>
 
@@ -1146,6 +1122,65 @@ html.rm .cur{animation:none}
       <div><b>Terminal pane</b><span>OpenCode, Aider, GitHub Copilot CLI, Cursor CLI, Amp, Goose, Qwen Code, Cline, Droid, Hermes Agent, Kimi Code, Mistral Vibe.</span></div>
     </div>
     <p class="foot">Plus any CLI you name. "Something else" adds one Pando has not heard of.</p>
+    <div class="multi" id="workspaces">
+      <div class="import-head">
+        <h3>Four agents. One folder. One screen.</h3>
+        <p>Open up to 12 terminals in a workspace and pick the agent for each one. They work the same folder at the same time, and you watch all of them.</p>
+      </div>
+      <div class="scene" data-scene>
+        <div class="shot"><div class="shot-in" data-w="1280" data-h="660" data-mw="640" data-mh="640" aria-hidden="true">
+          <div class="win-bar"><span class="brand"><svg><use href="#mark"/></svg>PANDO</span><svg class="fold"><use href="#i-side"/></svg><span class="win-right"><span class="pill"><svg><use href="#i-usage"/></svg>Usage</span><span class="pill voice"><svg><use href="#i-voice"/></svg>Voice</span><span class="bell"><svg><use href="#i-bell"/></svg></span></span></div>
+          <div class="win-body">
+            <aside class="win-side"><nav class="modes"><span class="mode on"><svg><use href="#i-code"/></svg>Code</span><span class="mode"><svg><use href="#i-agents"/></svg>Agents</span><span class="mode"><svg><use href="#i-chat"/></svg>Chat</span><span class="mode"><svg><use href="#i-brain"/></svg>Brain</span></nav><div class="side-h"><i>&#9662;</i>Workspaces<b>+</b></div><a class="ws on">ledger-web <b>4</b></a><a class="ws">marketing-site <b>2</b></a><div class="side-h"><i>&#9662;</i>Folders</div><a class="ws on" style="background:none">ledger-web</a><div class="side-h tools"><i>&#9662;</i>Tools</div><a>Routines</a><a>Plugins</a><a>Skills</a><a>Studio</a><div class="side-foot"><span class="avatar">M</span>Maya Okafor<svg><use href="#i-gear"/></svg></div></aside>
+            <div class="win-stage"><div class="stage-view">
+              <div class="stage-h"><b>ledger-web</b><span>4 terminals</span><span class="acts"><span class="tbtn"><svg><use href="#i-layout"/></svg>Layout</span><span class="pbtn"><svg><use href="#i-plus"/></svg>New session</span></span></div>
+              <div class="panes">
+                <div class="pane focused"><div class="pane-h"><span class="dot live"></span><span class="ico"><img src="assets/claude.svg" alt=""></span><span class="name">Claude Code</span><span class="ttl">Fix rounding test</span><span class="acts"><span>Preview</span><span class="x">+ &#8722; &#8598; &#215;</span></span></div><div class="term">
+                  <div class="ln p show"><span class="pre">maya@studio ledger-web % </span><span class="tx">claude</span></div>
+                  <div class="ln q show ag-row" style="--d:.2s"><span class="pre">&gt; </span><span class="tx">fix the failing invoice rounding test</span></div>
+                  <div class="ln ok show ag-row" style="--d:.6s"><span class="pre">&#9679; </span><span class="tx">Read(tests/invoice.test.ts)</span></div>
+                  <div class="ln ok show ag-row" style="--d:1s"><span class="pre">&#9679; </span><span class="tx">Update(src/money.ts)</span></div>
+                  <div class="ln ok show ag-row" style="--d:1.4s"><span class="pre">&#9679; </span><span class="tx">Bash(npm test)</span></div>
+                  <div class="ln dim show ag-row" style="--d:1.8s"><span class="pre">  &#9083;  </span><span class="tx">148 passed, 0 failed</span></div>
+                  <div class="ln ok show ag-row" style="--d:2.4s"><span class="pre">&#9679; </span><span class="tx">Bash(deck send s2 "Totals round half-even.")</span></div>
+                </div></div>
+                <div class="pane"><div class="pane-h"><span class="dot live"></span><span class="ico"><img src="assets/codex.png" alt=""></span><span class="name">Codex</span><span class="ttl">CSV export</span><span class="acts"><span>Preview</span><span class="x">+ &#8722; &#8598; &#215;</span></span></div><div class="term">
+                  <div class="ln p show"><span class="pre">maya@studio ledger-web % </span><span class="tx">codex</span></div>
+                  <div class="ln q show ag-row" style="--d:.35s"><span class="pre">&#8250; </span><span class="tx">add a CSV export to the invoices page</span></div>
+                  <div class="ln ok show ag-row" style="--d:.8s"><span class="pre">&#8226; </span><span class="tx">edit  src/pages/invoices.tsx</span></div>
+                  <div class="ln ok show ag-row" style="--d:1.25s"><span class="pre">&#8226; </span><span class="tx">write src/lib/csv.ts</span></div>
+                  <div class="ln msg show ag-row" style="--d:2.9s"><span class="pre">&#9656; </span><span class="tx">[message from claude via deck send] Totals round half-even.</span></div>
+                  <div class="ln ok show ag-row" style="--d:3.4s"><span class="pre">&#8226; </span><span class="tx">exec  npm test</span></div>
+                  <div class="ln dim show ag-row" style="--d:3.8s"><span class="pre">      </span><span class="tx">151 passed, 0 failed</span></div>
+                </div></div>
+                <div class="pane"><div class="pane-h"><span class="dot live"></span><span class="ico"><img src="assets/gemini.svg" alt=""></span><span class="name">Gemini CLI</span><span class="ttl">Release notes</span><span class="acts"><span>Preview</span><span class="x">+ &#8722; &#8598; &#215;</span></span></div><div class="term">
+                  <div class="ln p show"><span class="pre">maya@studio ledger-web % </span><span class="tx">gemini</span></div>
+                  <div class="ln q show ag-row" style="--d:.5s"><span class="pre">&gt; </span><span class="tx">write release notes for 1.4</span></div>
+                  <div class="ln ok show ag-row" style="--d:1.1s"><span class="pre">&#10003; </span><span class="tx">Shell git log 1.3.0..HEAD --oneline</span></div>
+                  <div class="ln dim show ag-row" style="--d:1.5s"><span class="pre">   </span><span class="tx">12 commits</span></div>
+                  <div class="ln ok show ag-row" style="--d:2.1s"><span class="pre">&#10003; </span><span class="tx">WriteFile CHANGELOG.md</span></div>
+                  <div class="ln dim show ag-row" style="--d:2.5s"><span class="pre">   </span><span class="tx">+38 lines</span></div>
+                </div></div>
+                <div class="pane"><div class="pane-h"><span class="dot live"></span><span class="ico"><img src="assets/grok.svg" alt=""></span><span class="name">Grok CLI</span><span class="ttl">Review the export</span><span class="acts"><span>Preview</span><span class="x">+ &#8722; &#8598; &#215;</span></span></div><div class="term">
+                  <div class="ln p show"><span class="pre">maya@studio ledger-web % </span><span class="tx">grok</span></div>
+                  <div class="ln q show ag-row" style="--d:.65s"><span class="pre">&gt; </span><span class="tx">review the CSV export diff</span></div>
+                  <div class="ln ok show ag-row" style="--d:1.7s"><span class="pre">&#10003; </span><span class="tx">git diff src/lib/csv.ts</span></div>
+                  <div class="ln dim show ag-row" style="--d:2.1s"><span class="pre">   </span><span class="tx">+64 lines</span></div>
+                  <div class="ln meta show ag-row" style="--d:3s"><span class="pre"></span><span class="tx">Commas and quotes are escaped. Looks right.</span></div>
+                </div></div>
+              </div>
+            </div></div>
+          </div>
+          <div class="win-status"><span><i class="sdot ok"></i>4 sessions<i>/</i>Stored on this Mac</span><span><svg><use href="#i-brain"/></svg>Shared memory<i>&#8599;</i></span></div>
+        </div></div>
+        <p class="cap"><b>One workspace, four agents.</b> Claude Code passes a finding to Codex without you.</p>
+      </div>
+      <div class="roster">
+        <div><b>Up to 12 terminals</b><span>Pick 1, 2, 4, 6, 8, 10 or 12 for a workspace. Layout evens out the grid. Save it as a preset and open it in one click.</span></div>
+        <div><b>A different agent in each</b><span>Claude Code in one pane, Codex in the next, Gemini CLI, Grok or a plain shell beside them. Each pane can start in its own subfolder.</span></div>
+        <div><b>They hand work to each other</b><span>One agent messages another. The other pane gets it as its next prompt, so you never copy and paste between them.</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1173,7 +1208,7 @@ html.rm .cur{animation:none}
 <!-- ============ VOICE ============ -->
 <section class="section voice" id="voice">
   <div class="wrap">
-    <p class="eyebrow">Pando Voice &#183; included with your subscription</p>
+    <p class="eyebrow">Pando Voice &#183; included with every licence</p>
     <h2 class="big">Say the work. Pando Voice types it.</h2>
     <p class="lede">A menu-bar app that comes with Pando. Hold Right Option, speak, release. The words are cleaned up and typed into whatever app has focus: editors, browsers, chat, terminals. Transcription runs on your Mac with Apple Speech, so there is no API key, it works offline, and nothing leaves the machine.</p>
     <div class="grid">
@@ -1196,14 +1231,25 @@ html.rm .cur{animation:none}
 <section class="section pricing" id="pricing">
   <div class="wrap">
     <p class="eyebrow">Pricing</p>
-    <h2 class="big">One plan. Everything a vibe coder needs.</h2>
+    <h2 class="big">One app. Everything a vibe coder needs.</h2>
+
+    <div class="founder" id="founding">
+      <div class="founder-top">
+        <span class="founder-tag"><i></i>Founding licence</span>
+        <span class="founder-left" id="foundingLeft">20 left</span>
+      </div>
+      <div class="price"><b>$55</b><span>once</span></div>
+      <p class="founder-note">Pando for life, every update included. Twenty of these, and they end on October 5. Full refund within 30 days.</p>
+      <div class="cta"><a class="btn primary big" href="/account?plan=lifetime">Get a founding licence</a></div>
+    </div>
+
     <div class="plan">
       <div class="plan-top">
         <div class="plan-name">Pando<span>For vibe coders who direct agents.</span></div>
         <div class="bill" role="tablist" aria-label="Billing"><button role="tab" class="on" data-b="m" aria-selected="true">Monthly</button><button role="tab" data-b="y" aria-selected="false">Annual <em>Save 20%</em></button></div>
       </div>
       <div class="price"><b id="priceNum">$24</b><span>a month</span></div>
-      <p class="pnote" id="priceNote">Free for 14 days, then billed monthly. Cancel anytime.</p>
+      <p class="pnote" id="priceNote">Billed monthly. Cancel anytime. Full refund within 30 days.</p>
       <div class="cta"><a class="btn primary big" href="/account">Start Pando</a></div>
       <ul class="incl">
         <li><svg><use href="#i-check"/></svg><span><b>The Mac app.</b> Code, Agents, Chat, Brain, Review. Routines, Skills, Plugins, Studio. No tiers.</span></li>
@@ -1365,7 +1411,7 @@ function renderAll(){ for (var k in T) renderPane(k); }
 renderAll();
 
 /* ---------- the download gate (Jared, 2026-09-15): every Download button goes to the account page.
-   Sign in or start the free trial there; the DMG is offered only once a key exists. The release feed
+   Sign in or subscribe there; the DMG is offered only once a key exists. The release feed
    that used to point these buttons straight at the DMG is gone on purpose. ---------- */
 
 /* ---------- iPhone and iPad: a DMG is no use here, so the button sends the link to the Mac ---------- */
@@ -1385,41 +1431,119 @@ renderAll();
   });
 })();
 
-/* ---------- Second Brain builder (same geometry as the app) ---------- */
-function buildSecondBrain(host, compact){
-  var features = ['projects','knowledge','decisions','journal','raw/inbox'], counts = [3,5,3,2,1], total = 14;
-  var operations = ['Branch','Merge','Condition','Sort','Branch','Merge','Condition','Sort'], opVals = [14,118,2,27];
-  var pages = ['ledger-web','Invoice rounding','Roof quotes','Release 1.4','CSV export','Exports policy','Ledger routine','Vendor terms','Tax rates 2026','Client: Northbank','Sealine quote','Design system','Deploy checklist','Money helpers'];
-  var claims = [5,4,4,3,3,3,2,2,2,1];
-  var curve = function(x,y,tx,ty){ return 'M'+x+','+y+' C'+(x+(tx-x)*.48)+','+y+' '+(tx-(tx-x)*.48)+','+ty+' '+tx+','+ty; };
-  var svg = '';
-  for (var i = 0; i < 5; i++) for (var j = 0; j < 8; j++){ var d = curve(212, 58+i*76, 435+(j%2)*68, 35+j*48);
-    svg += '<path class="sb-edge has-data" d="'+d+'"/>';
-    if ((i+j)%2===0) svg += '<circle class="sb-particle" r="2"><animateMotion dur="'+(2+j*.17)+'s" begin="'+(-i-j*.24)+'s" repeatCount="indefinite" path="'+d+'"/></circle>'; }
-  for (var p = 0; p < pages.length; p++) for (var k = 0; k < 4; k++){ var d2 = curve(620+(k%2)*35, 45+((p+k)%8)*48, 895+(p%2)*18, 25+p*29);
-    svg += '<path class="sb-edge has-data" d="'+d2+'"/>';
-    if ((p+k)%3===0) svg += '<circle class="sb-particle" r="1.8"><animateMotion dur="'+(2.5+k*.27)+'s" begin="'+(-p*.21)+'s" repeatCount="indefinite" path="'+d2+'"/></circle>'; }
-  features.forEach(function(f,i){ var ratio = counts[i]/total; svg += '<g transform="translate(18 '+(30+i*76)+')" class="sb-feature"><rect width="194" height="59" rx="1"/><rect class="sb-fill" width="'+(194*ratio).toFixed(1)+'" height="7"/><text x="9" y="24">'+f.toUpperCase()+'</text><text x="9" y="43" class="sb-dim">versions</text><text x="182" y="43" text-anchor="end">'+counts[i]+' / '+ratio.toFixed(3)+'</text></g>'; });
-  operations.forEach(function(op,i){ svg += '<g transform="translate('+(435+(i%2)*68)+' '+(20+i*48)+')" class="sb-op sb-op-'+(i%4)+'"><rect width="152" height="28"/><rect class="sb-op-bar" width="152" height="5"/><text x="8" y="19">'+op+' '+String(i+1).padStart(2,'0')+'</text><text x="144" y="19" text-anchor="end">'+opVals[i%4]+'</text></g>'; });
-  pages.forEach(function(t,i){ svg += '<g transform="translate('+(895+(i%2)*18)+' '+(12+i*29)+')" class="sb-output"><rect width="185" height="23"/><rect class="sb-op-bar" width="185" height="4"/><text x="7" y="16">'+t+'</text></g>'; });
-  var log = [['06:00:12','compiled journal/2026-09-11.md · 3 claims'],['06:00:14','linked Release 1.4 → ledger-web'],['09:41:03','compiled decisions/invoice-rounding.md · 4 claims'],['09:41:05','rival kept: totals round half-even vs half-up'],['11:12:40','compiled decisions/roof-quotes.md · 5 claims'],['11:12:41','wiki / v2 rebuilt · 14 versions']];
-  var bars = pages.slice(0,10).map(function(t,i){ return '<div><span>'+t.slice(0,18)+'</span><i style="width:'+(claims[i]/5*65).toFixed(0)+'%"></i><b>'+claims[i]+'</b></div>'; }).join('');
-  var pts = [2,3,5,6,8,9,11,12,13,14].map(function(v,i){ return (10+i*26)+','+(92-v*5.6); }).join(' ');
-  host.innerHTML =
-    '<section class="sb" aria-label="Second Brain">'+
-    '<header class="sb-header"><div><h1>Second Brain</h1><small>COMPILED UNDERSTANDING / PANDO</small></div><div class="sb-status"><i></i>MEMORY ACTIVE</div><span class="sb-btn">Pause motion</span></header>'+
-    '<div class="sb-toolbar"><nav><span class="selected">01 / Compiler</span><span>02 / Rival memory <b>2</b></span></nav><small>New and changed sources compile automatically while Pando is running</small></div>'+
-    '<div class="sb-metrics">'+[['GRAPH','wiki / v2'],['NODES','41'],['EDGES','118'],['BUS READERS','3'],['DEPTH','3'],['T','0.0 s']].map(function(m){ return '<div><span>'+m[0]+'</span><strong>'+m[1]+'</strong></div>'; }).join('')+'</div>'+
-    '<div class="sb-graph"><div class="sb-stage-label"><span>SOURCE FEATURES</span><span>COMPILATION BUS</span><span>LINKED WIKI / 14 VERSIONS</span></div>'+
-    '<svg viewBox="0 0 1120 440" role="img" aria-label="14 compiled source versions flowing through Branch, Merge, Condition and Sort operations">'+svg+'</svg>'+
-    '<div class="sb-stage-caption">14 source versions preserved. Waiting for a source change.</div></div>'+
-    '<div class="sb-panels"><section><h3>RUN LOG <span>ACTIVE</span></h3><div class="sb-log">'+log.map(function(l){ return '<div><time>'+l[0]+'</time><span>'+l[1]+'</span></div>'; }).join('')+'</div></section>'+
-    '<section><h3>GENERATOR <span>CLAIMS / SOURCE</span></h3><div class="sb-bars">'+bars+'</div></section>'+
-    '<section><h3>GRAPH STAT <span>COMPILED VERSIONS</span></h3><svg viewBox="0 0 260 100" preserveAspectRatio="none" class="sb-chart" role="img" aria-label="Compiled source versions over time"><polyline class="sb-axis" points="10,92 250,92"/><polyline points="'+pts+'"/></svg></section></div>'+
-    (compact ? '' : '<footer class="sb-footer"><div><strong>Second Brain</strong><small>the compiler doesn’t wait for you to ask. it’s already linking.</small></div><span>RAW PRESERVED · RIVALS RETAINED</span></footer>')+
-    '</section>';
+/* ---------- Second Brain builder: the Halo (same geometry rules as the app's haloWorld.ts) ---------- */
+/* A made-up vault for the page, laid out the way the app lays out a real one: sections in canon order
+   around the band, hubs first inside a section, chords pulled toward the centre and lifted alternately
+   above and below the plane. Deterministic: same page, same halo. */
+var HALO_SECTIONS = [['profile',3,'#ffd60a'],['decisions',9,'#ffbe6e'],['knowledge',12,'#7fd88f'],['projects',7,'#5ea3d4'],['journal',8,'#c792ea'],['inbox',3,'#ff8ab8']];
+var HALO_NAMES = {profile:['identity','how-i-work','voice'], inbox:['Suggested: retainer rule','Suggested: CSV columns','Suggested: deploy hour'], projects:['ledger-web','Roof quotes','Release 1.4','Northbank fit-out','Sealine quote','Client: Northbank','Vendor terms'], decisions:['Invoice rounding','Exports policy','Tax rates 2026','Deploy checklist','Money helpers','CSV export','Design system','Ledger routine','Retainer terms']};
+function haloWorld(){
+  var seed = 7, rnd = function(){ seed = (seed * 1664525 + 1013904223) % 4294967296; return seed / 4294967296; };
+  var stars = [], rails = [], N = 0, i, k;
+  HALO_SECTIONS.forEach(function(sec){ N += sec[1]; });
+  var R = Math.max(340, Math.min(980, N * 3.8)), start = 0;
+  HALO_SECTIONS.forEach(function(sec){
+    var names = HALO_NAMES[sec[0]] || [];
+    for (i = 0; i < sec[1]; i++){
+      var a = ((start + i) / N) * Math.PI * 2 - Math.PI / 2;
+      // hubs first inside a section, like the app: degree falls off along the arc
+      stars.push({section:sec[0], color:sec[2], title:names[i] || (sec[0] + ' ' + (i + 1)), angle:a, pos:[Math.cos(a) * R, 0, Math.sin(a) * R], degree:Math.max(0, Math.round((sec[0] === 'projects' && !i ? 20 : 14) * Math.pow(0.55, i) + rnd() * 2 - 1)), pending:sec[0] === 'inbox'});
+    }
+    rails.push({color:sec[2], a0:(start / N) * Math.PI * 2 - Math.PI / 2, a1:((start + sec[1]) / N) * Math.PI * 2 - Math.PI / 2});
+    start += sec[1];
+  });
+  var chords = [], seen = {};
+  stars.forEach(function(s, si){
+    for (k = 0; k < s.degree; k++){
+      // links favour other sections, so the web crosses the middle rather than hugging the band
+      var ti = Math.floor(rnd() * N); if (ti === si || stars[ti].section === s.section && rnd() < 0.7) continue;
+      var key = Math.min(si, ti) + ':' + Math.max(si, ti); if (seen[key]) continue; seen[key] = 1;
+      var a = s.pos, b = stars[ti].pos, dist = Math.hypot(a[0] - b[0], a[2] - b[2]);
+      var lift = ((si + ti) % 2 ? 1 : -1) * (30 + dist * 0.1);
+      chords.push({a:si, b:ti, mid:[(a[0] + b[0]) * 0.32, lift, (a[2] + b[2]) * 0.32]});
+    }
+  });
+  var deg = stars.map(function(){ return 0; }); chords.forEach(function(c){ deg[c.a]++; deg[c.b]++; });
+  stars.forEach(function(s, si){ s.degree = deg[si]; s.orphan = deg[si] === 0; });
+  // one electrode per chord, staggered so they never move in step
+  var electrodes = chords.map(function(c, ci){ return {chord:c, u:(ci * 0.618) % 1}; });
+  return {stars:stars, rails:rails, chords:chords, electrodes:electrodes, R:R, N:N};
 }
-buildSecondBrain($('sbFilm'), true); buildSecondBrain($('sbSection'), false);
+var HALO_TILT_Z = 0.42, HALO_TILT_Y = 0.85, HALO_CHORD = '#5ecf9f', HALO_PULSE = '#93e1c0';
+/* `state.work` is the engine at work, 0..1: the hub note it is reading stays lit and every trail into it
+   flares, which sends the electrodes on those trails dashing. The film scrubs it; the section pulses it. */
+function buildHalo(host, compact){
+  var world = haloWorld();
+  var hub = 0; world.stars.forEach(function(s, i){ if (s.degree > world.stars[hub].degree) hub = i; });
+  var hot = {}; hot[hub] = 1; world.chords.forEach(function(c){ if (c.a === hub || c.b === hub) c.hot = 1; });
+  host.innerHTML = '<div class="halo" aria-label="Second Brain: the Halo" role="img"><canvas></canvas>' +
+    '<div class="halo-top"><span class="halo-search">Search the halo\u2026</span><span class="halo-seg"><span class="on">Second Brain</span><span>Notes</span><span>Ledger</span><span>Engine</span></span><span class="halo-reset">Reset view</span></div>' +
+    '<div class="halo-hint">drag to circle it \u00b7 scroll to zoom \u00b7 Reset view recentres the Brain</div>' +
+    '<div class="halo-foot">' + HALO_SECTIONS.map(function(sec){ return '<span><i style="background:' + sec[2] + '"></i>' + sec[0] + '</span>'; }).join('') + '<b>3 awaiting you</b></div>' +
+    '<div class="halo-label"></div></div>';
+  var root = host.firstChild, canvas = root.querySelector('canvas'), g = canvas.getContext('2d'), label = root.querySelector('.halo-label');
+  label.textContent = world.stars[hub].title;
+  var state = {work:0, rot:0, last:performance.now()};
+  function draw(now){
+    var dt = Math.min(0.1, (now - state.last) / 1000); state.last = now;
+    var w = root.clientWidth, h = root.clientHeight, dpr = Math.min(2, window.devicePixelRatio || 1);
+    if (!w || !h) return;
+    if (canvas.width !== w * dpr || canvas.height !== h * dpr){ canvas.width = w * dpr; canvas.height = h * dpr; }
+    g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
+    if (!RM) state.rot += dt * 0.06;
+    var cx = w / 2, cy = h * 0.55, R = world.R, rot = state.rot;
+    var s = Math.min((w * 0.44) / R, (h * 0.4) / (R * HALO_TILT_Z));
+    var project = function(x, y, z){ var rx = x * Math.cos(rot) - z * Math.sin(rot), rz = x * Math.sin(rot) + z * Math.cos(rot); return [cx + rx * s, cy + (rz * HALO_TILT_Z - y * HALO_TILT_Y) * s]; };
+    var at = function(c, t){ var a = world.stars[c.a].pos, b = world.stars[c.b].pos, m = c.mid, mt = 1 - t; return [mt*mt*a[0] + 2*mt*t*m[0] + t*t*b[0], mt*mt*a[1] + 2*mt*t*m[1] + t*t*b[1], mt*mt*a[2] + 2*mt*t*m[2] + t*t*b[2]]; };
+    // sky
+    g.fillStyle = 'rgba(159,180,204,.45)';
+    for (var i = 0; i < 90; i++){ var sx = (Math.sin(i * 13.13) * 43758.5453) % 1, sy = (Math.sin(i * 7.77) * 12345.678) % 1; g.fillRect(Math.abs(sx) * w, Math.abs(sy) * h, 1, 1); }
+    // rails
+    g.lineWidth = 1;
+    world.rails.forEach(function(r){ g.strokeStyle = r.color; g.globalAlpha = 0.55; g.beginPath(); for (var k = 0; k <= 48; k++){ var a = r.a0 + (r.a1 - r.a0) * k / 48, p = project(Math.cos(a) * (R + 26), 0, Math.sin(a) * (R + 26)); if (k) g.lineTo(p[0], p[1]); else g.moveTo(p[0], p[1]); } g.stroke(); });
+    // chords: faint mint; a hot one brightens with the work
+    world.chords.forEach(function(c){
+      var heat = c.hot ? state.work : 0;
+      g.strokeStyle = heat > 0.02 ? HALO_PULSE : HALO_CHORD; g.globalAlpha = Math.min(0.85, 0.2 + heat * 0.5);
+      g.beginPath(); for (var k = 0; k <= 10; k++){ var p3 = at(c, k / 10), p = project(p3[0], p3[1], p3[2]); if (k) g.lineTo(p[0], p[1]); else g.moveTo(p[0], p[1]); } g.stroke();
+    });
+    // electrodes: a crawl at rest, a dash on a hot trail; they fade in and out at the stars
+    world.electrodes.forEach(function(e){
+      var rush = e.chord.hot ? state.work : 0;
+      if (!RM) e.u = (e.u + (0.07 + rush * 0.83) * dt) % 1;
+      var p3 = at(e.chord, e.u), p = project(p3[0], p3[1], p3[2]), r = (compact ? 1.6 : 2.2) * (1 + rush * 0.7);
+      g.globalAlpha = Math.sin(Math.PI * e.u) * (0.75 + rush * 0.25);
+      var glow = g.createRadialGradient(p[0], p[1], 0, p[0], p[1], r * 3); glow.addColorStop(0, HALO_PULSE); glow.addColorStop(1, 'rgba(147,225,192,0)');
+      g.fillStyle = glow; g.beginPath(); g.arc(p[0], p[1], r * 3, 0, 7); g.fill();
+    });
+    // the band: every note in its section's colour, hubs bigger, orphans faint, inbox breathing
+    world.stars.forEach(function(st, si){
+      var p = project(st.pos[0], st.pos[1], st.pos[2]), heat = hot[si] ? state.work : 0;
+      var r = (compact ? 1.4 : 2) + Math.min(6, st.degree) * (compact ? 0.4 : 0.55) + heat * 2;
+      var o = st.orphan ? 0.4 : 0.95; if (st.pending && !RM) o *= 0.7 + 0.3 * Math.sin(now / 600 + st.angle * 4);
+      g.globalAlpha = o;
+      var glow = g.createRadialGradient(p[0], p[1], 0, p[0], p[1], r * 3.2); glow.addColorStop(0, st.color); glow.addColorStop(1, 'rgba(0,0,0,0)');
+      g.fillStyle = glow; g.beginPath(); g.arc(p[0], p[1], r * 3.2, 0, 7); g.fill();
+      g.fillStyle = st.color; g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fill();
+      if (si === hub){ label.style.left = p[0] + 'px'; label.style.top = (p[1] + 8) + 'px'; label.style.opacity = compact ? 0 : 0.92; }
+    });
+    g.globalAlpha = 1;
+  }
+  return {state:state, draw:draw};
+}
+var haloFilm = buildHalo($('sbFilm'), true), haloSection = buildHalo($('sbSection'), false);
+window.__halo = {film:haloFilm, section:haloSection}; /* for the proof harness */
+(function(){
+  var shown = false; if ('IntersectionObserver' in window){ new IntersectionObserver(function(es){ shown = es[0].isIntersecting; }).observe($('sbSection')); } else shown = true;
+  var t0 = performance.now();
+  function frame(now){
+    haloFilm.draw(now);
+    // the section's halo shows the engine at work on its own: a slow pulse every eight seconds
+    if (shown){ haloSection.state.work = RM ? 0 : Math.max(0, Math.sin(((now - t0) / 8000) * Math.PI * 2)); haloSection.draw(now); }
+    if (!RM || now - t0 < 500) requestAnimationFrame(frame); else { haloFilm.draw(now); haloSection.draw(now); }
+  }
+  requestAnimationFrame(frame);
+})();
 
 /* ---------- Voice demo: words land in the field ---------- */
 (function(){
@@ -1438,7 +1562,7 @@ buildSecondBrain($('sbFilm'), true); buildSecondBrain($('sbSection'), false);
 /* ---------- billing switch ---------- */
 (function(){
   var btns = document.querySelectorAll('.bill button'), num = $('priceNum'), note = $('priceNote'); if (!num) return;
-  var COPY = {m:['$24','Free for 14 days, then billed monthly. Cancel anytime.'], y:['$19','Free for 14 days, then $228 billed yearly. Cancel anytime.']};
+  var COPY = {m:['$24','Billed monthly. Cancel anytime. Full refund within 30 days.'], y:['$19','$228 billed yearly. Cancel anytime. Full refund within 30 days.']};
   btns.forEach(function(b){ b.addEventListener('click', function(){ btns.forEach(function(x){ var on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-selected', on ? 'true' : 'false'); }); num.textContent = COPY[b.dataset.b][0]; note.textContent = COPY[b.dataset.b][1]; }); });
 })();
 
@@ -1533,14 +1657,16 @@ function paintOverlays(p){
   function draw(t){
     ctx.clearRect(0, 0, W, H);
     var cx = W / 2 - cam.x * 0.1, cy = H * 0.46, floorY = narrow() ? 200 : 380 - cam.y;
+    /* the hero keeps a clean black field: the floor fades in as the film starts */
+    var hero = Math.max(0, Math.min(1, (scrollY - innerHeight * 0.55) / (innerHeight * 1.05)));
     /* horizontals: depth rows sliding toward the camera */
     var off = ((cam.z % GAP) + GAP) % GAP;
     ctx.lineWidth = 1;
     for (var n = 0; n < 34; n++){ var d = n * GAP + off, sc = P / (P + d), y = cy + floorY * sc; if (y > H + 2) continue;
-      var a = 0.09 * Math.pow(1 - n / 34, 1.6); ctx.strokeStyle = 'rgba(236,236,236,' + a.toFixed(3) + ')'; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+      var a = 0.09 * hero * Math.pow(1 - n / 34, 1.6); ctx.strokeStyle = 'rgba(236,236,236,' + a.toFixed(3) + ')'; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
     /* verticals converging on the horizon */
     var xoff = ((cam.x % GAP) + GAP) % GAP, far = P / (P + 34 * GAP), yNear = cy + floorY, yFar = cy + floorY * far;
-    for (var m = -14; m <= 14; m++){ var x = m * GAP - xoff, x0 = cx + x, x1 = cx + x * far; var a2 = 0.07 * (1 - Math.min(1, Math.abs(m) / 14));
+    for (var m = -14; m <= 14; m++){ var x = m * GAP - xoff, x0 = cx + x, x1 = cx + x * far; var a2 = 0.07 * hero * (1 - Math.min(1, Math.abs(m) / 14));
       ctx.strokeStyle = 'rgba(236,236,236,' + a2.toFixed(3) + ')'; ctx.beginPath(); ctx.moveTo(x0, yNear + 40); ctx.lineTo(x1, yFar); ctx.stroke(); }
     /* horizon fade */
     var g = ctx.createLinearGradient(0, cy - 40, 0, cy + floorY * 0.35); g.addColorStop(0, 'rgba(10,10,10,1)'); g.addColorStop(1, 'rgba(10,10,10,0)');
@@ -1637,7 +1763,6 @@ if (RM){
   $('intro').classList.add('off');
   for (var k in T) T[k] = terms[k].total; renderAll();
   $('turn').style.cssText = 'opacity:1;visibility:visible'; $('turnCard').style.height = 'auto';
-  document.querySelectorAll('.sb-particle').forEach(function(p){ p.remove(); });
   screens.forEach(function(s){ s.style.transform = 'none'; });
   window.__introDone = true; window.__ready = true;
   return;
@@ -1654,8 +1779,8 @@ if (JUMP === null && !MOBILE){
 }
 var heroCopy = $('heroCopy'), gate = $('gate'), rpApprove = $('rpApprove'), turn = $('turn'), turnCard = $('turnCard'), turnChev = $('turnChev');
 var reviewBody = $('reviewBody'), progressBar = $('progressBar');
-var sbLog = document.querySelectorAll('#sbFilm .sb-log > div'), agentMsgs = document.querySelectorAll('#agentThread .msg'), chatMsgs = document.querySelectorAll('#chatThread .msg');
-gsap.set(gate, {autoAlpha:0, y:24, scale:0.96}); gsap.set(turn, {autoAlpha:0}); gsap.set(agentMsgs, {autoAlpha:0, y:10}); gsap.set(chatMsgs, {autoAlpha:0, y:10}); gsap.set(sbLog, {autoAlpha:0, x:-6});
+var agentMsgs = document.querySelectorAll('#agentThread .msg'), chatMsgs = document.querySelectorAll('#chatThread .msg');
+gsap.set(gate, {autoAlpha:0, y:24, scale:0.96}); gsap.set(turn, {autoAlpha:0}); gsap.set(agentMsgs, {autoAlpha:0, y:10}); gsap.set(chatMsgs, {autoAlpha:0, y:10});
 var h0 = camHero(); cam.x = h0.x; cam.y = h0.y; cam.z = h0.z; cam.yaw = h0.yaw; applyCam();
 
 var tl = gsap.timeline({paused:true, defaults:{ease:'none'}});
@@ -1688,7 +1813,7 @@ travel(function(){ return camAt(2); }, 36, 5);
 tl.to(chatMsgs, {autoAlpha:1, y:0, duration:2, stagger:2, ease:'power2.out'}, 42);
 /* → 04 */
 travel(function(){ return camAt(3); }, 52, 5);
-tl.to(sbLog, {autoAlpha:1, x:0, duration:1.5, stagger:1.4, ease:'power2.out'}, 58);
+tl.to(haloFilm.state, {work:1, duration:4, ease:'power2.inOut'}, 58).to(haloFilm.state, {work:0, duration:3, ease:'power2.inOut'}, 64);
 /* → 05 */
 travel(function(){ return camAt(4); }, 68, 5);
 tl.to(T, {gate:lineEnd('gate', GATE_SPLIT - 1), duration:3, onUpdate:function(){ renderPane('gate'); }}, 73.5)
@@ -1764,7 +1889,8 @@ if (INTRO){
 /* 3D scenes: scale each replica to its column, animate when it scrolls into view */
 function fitShots(){
   document.querySelectorAll('.shot,.mshot').forEach(function(sh){
-    var inn = sh.firstElementChild, W = +inn.dataset.w, H = +inn.dataset.h, sc = sh.clientWidth / W;
+    var inn = sh.firstElementChild, nar = innerWidth <= 900 && inn.dataset.mw;
+    var W = +(nar ? inn.dataset.mw : inn.dataset.w), H = +(nar ? inn.dataset.mh : inn.dataset.h), sc = sh.clientWidth / W;
     inn.style.width = W + 'px'; inn.style.height = H + 'px'; inn.style.transform = 'scale(' + sc + ')';
     sh.style.height = Math.round(H * sc) + 'px';
   });

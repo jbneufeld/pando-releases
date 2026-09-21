@@ -1,0 +1,62 @@
+/* ---------- Second Brain, drawn the way the app draws it ---------- */
+.sb{--sb-line:rgba(236,236,236,.16);--sb-dim:rgba(236,236,236,.57);color:var(--ink);background:var(--bg);width:100%;height:100%;overflow:hidden;padding:18px 26px 22px;font:13px var(--mono);box-sizing:border-box}
+.sb *{box-sizing:border-box}
+.sb-header{display:flex;flex-wrap:wrap;align-items:center;gap:18px;padding-bottom:12px}
+.sb h1{font-family:var(--ui);font-weight:600;font-size:26px;letter-spacing:-.005em;margin:0 0 4px;line-height:1.1}
+.sb small{display:block;font-size:11.5px;color:var(--sb-dim);line-height:1.7;letter-spacing:.04em}
+.sb-status{margin-left:auto;font-size:11.5px;letter-spacing:.06em;display:flex;align-items:center;gap:8px}
+.sb-status i{width:5px;height:5px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green)}
+.sb-btn{border:1px solid var(--sb-line);background:transparent;padding:8px 12px;border-radius:3px;font:inherit;color:inherit}
+.sb-toolbar{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;border-top:1px solid var(--sb-line);border-bottom:1px solid var(--sb-line);padding:6px 0}
+.sb-toolbar nav{display:flex;gap:8px}
+.sb-toolbar nav span{padding:7px 12px;color:var(--sb-dim);border-radius:3px}
+.sb-toolbar nav span.selected{color:var(--ink);background:rgba(236,236,236,.07)}
+.sb-toolbar nav b{font-weight:400;color:var(--amber);margin-left:8px}
+.sb-toolbar>small{align-self:center;color:var(--sb-dim)}
+.sb-metrics{display:flex;flex-wrap:wrap;gap:16px 52px;padding:14px 4px 14px}
+.sb-metrics div{display:flex;flex-direction:column;gap:6px}
+.sb-metrics span{font-size:11.5px;color:var(--sb-dim);letter-spacing:.09em}
+.sb-metrics strong{font-size:17px;font-weight:500}
+.sb-graph{border:1px solid var(--sb-line);background:radial-gradient(ellipse at 52% 40%,rgba(236,236,236,.03),transparent 70%)}
+.sb-stage-label{display:flex;justify-content:space-between;padding:16px 20px 0;font-size:11px;letter-spacing:.12em;color:var(--sb-dim)}
+.sb-graph svg{width:100%;display:block;height:auto}
+.sb svg text{fill:var(--ink);font:12px var(--mono)}
+.sb svg .sb-dim{fill:var(--sb-dim);font-size:11px}
+.sb-edge{fill:none;stroke:var(--ink);stroke-width:.5;opacity:.05}
+.sb-edge.has-data{opacity:.16}
+.sb-feature>rect:first-child,.sb-op>rect:first-child,.sb-output>rect:first-child{fill:var(--bg);stroke:var(--sb-line)}
+.sb-fill{fill:var(--green)}
+.sb-op-bar{fill:var(--sb-dim)}
+.sb-op-0 .sb-op-bar{fill:var(--green)}
+.sb-op-2 .sb-op-bar{fill:var(--amber)}
+.sb-particle{fill:var(--ink)}
+.sb-particle.sb-idle{opacity:.28}
+.sb-stage-caption{border-top:1px solid var(--sb-line);padding:10px 16px;color:var(--sb-dim);font-size:12px}
+.sb-panels{display:grid;grid-template-columns:1.4fr 1fr .8fr;border:1px solid var(--sb-line);border-top:0}
+.sb-panels section{padding:18px;min-width:0;border-right:1px solid var(--sb-line)}
+.sb-panels section:last-child{border:0}
+.sb h3{margin:0 0 10px;font-size:12px;font-weight:400;letter-spacing:.08em}
+.sb h3>span{float:right;color:var(--sb-dim);font-size:11px;letter-spacing:0}
+.sb-log{height:150px;overflow:hidden}
+.sb-log>div{display:flex;gap:10px;font-size:11.5px;line-height:1.9}
+.sb-log time{color:var(--sb-dim);flex-shrink:0}
+.sb-bars{height:150px;overflow:hidden}
+.sb-bars>div{display:flex;align-items:center;gap:7px;font-size:12px;min-height:22px}
+.sb-bars span{width:42%;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;flex-shrink:0;color:var(--sb-dim)}
+.sb-bars i{height:8px;background:var(--green)}
+.sb-bars b{font-weight:400}
+.sb-chart{height:150px;width:100%;overflow:visible}
+.sb-chart polyline{stroke:var(--green);stroke-width:1.5;fill:none}
+.sb-axis{stroke:var(--sb-line);fill:none;stroke-width:.7}
+.sb-footer{display:flex;align-items:center;gap:12px;border-top:1px solid var(--sb-line);padding-top:14px;margin-top:14px}
+.sb-footer strong{font-family:var(--ui);font-weight:600;font-size:14px}
+.sb-footer>span:last-child{margin-left:auto;font-size:11px;color:var(--sb-dim)}
+/* in the film screen: compact */
+.screen .sb{padding:12px 18px 14px;font-size:11.5px}
+.screen .sb h1{font-size:20px}
+.screen .sb-metrics{padding:10px 4px;gap:10px 34px}
+.screen .sb-metrics strong{font-size:14px}
+.screen .sb-panels section{padding:12px}
+.screen .sb-log,.screen .sb-bars,.screen .sb-chart{height:96px}
+.screen .sb-footer{display:none}
+/* in the section: full width */

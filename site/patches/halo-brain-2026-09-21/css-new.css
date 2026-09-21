@@ -1,0 +1,20 @@
+/* ---------- Second Brain: the Halo, drawn the way the app draws it ---------- */
+/* The Brain as a ring in space: every dot a note in its section's colour, every chord through the
+   middle a link, small electrodes riding the chords (a crawl at rest, a dash while the engine has that
+   trail hot). Same layout rules as the app's haloWorld.ts, on a 2D canvas. */
+.halo{position:relative;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--ink)}
+.halo canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.halo-top{position:absolute;left:14px;right:14px;top:12px;display:flex;align-items:center;gap:10px;pointer-events:none}
+.halo-search{flex:none;border:1px solid var(--edge);border-radius:8px;padding:6px 10px;font-size:11.5px;color:var(--faint);background:rgba(20,20,20,.7);min-width:150px}
+.halo-seg{margin:0 auto;display:flex;background:#141414;border:1px solid var(--hair);border-radius:999px;padding:3px}
+.halo-seg span{padding:4px 12px;border-radius:999px;font-size:12px;color:var(--ink2)}
+.halo-seg span.on{background:#222;color:var(--ink)}
+.halo-reset{flex:none;border:1px solid var(--edge);border-radius:8px;padding:6px 10px;font-size:11.5px;color:var(--ink2);background:rgba(20,20,20,.7)}
+.halo-foot{position:absolute;left:14px;right:14px;bottom:10px;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11px;letter-spacing:.06em;color:var(--ink2);pointer-events:none}
+.halo-foot i{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.halo-foot b{font-weight:500;color:var(--amber);border-left:1px solid var(--hair);padding-left:14px}
+.halo-hint{position:absolute;left:14px;bottom:32px;font-size:10.5px;color:var(--faint);pointer-events:none}
+.halo-label{position:absolute;transform:translate(-50%,0);pointer-events:none;font-size:11px;font-weight:600;color:rgba(238,243,249,.92);text-shadow:0 1px 6px rgba(0,0,0,.95);white-space:nowrap}
+/* in the section: a fixed stage */
+.brainsec .sbwrap .halo{height:clamp(380px,46vw,620px)}
+.brainsec .sbwrap .halo-search{min-width:190px}
