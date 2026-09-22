@@ -1,9 +1,9 @@
 {
-  "version": "0.3.13",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.13/Pando-0.3.13-arm64.dmg",
-  "filename": "Pando-0.3.13-arm64.dmg",
-  "size": 200214335,
-  "sha256": "ec92d8658e2a264af0c5d17fdb68a621e108dc10dac3b62123176146c3a34579",
-  "notes": "The Brain opens on the Halo again: a ring of every note, links as chords, small electrodes riding them, lit up as the engine works. Two Pandos on one Mac no longer fight over terminals or Brain settings. Pando finds terminals made by your own tmux again. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-22T04:23:24Z"
+  "version": "0.3.14",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.14/Pando-0.3.14-arm64.dmg",
+  "filename": "Pando-0.3.14-arm64.dmg",
+  "size": 200207700,
+  "sha256": "e54c6b7f0f962efff1f21abf623c9a57ae007f47a234cf99d26fbbb6d2895fb5",
+  "notes": "Setup now walks you through bringing memory over from ChatGPT, Claude and Gemini: open the app, copy a ready-made prompt, paste the answer back, and tick what goes into your Brain. Signed and notarized by Apple.",
+  "publishedAt": "2026-09-22T22:20:00Z"
 }
