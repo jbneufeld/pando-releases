@@ -1,9 +1,9 @@
 {
-  "version": "0.3.12",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.12/Pando-0.3.12-arm64.dmg",
-  "filename": "Pando-0.3.12-arm64.dmg",
-  "size": 200204860,
-  "sha256": "3893366f0653a9e07c97b892fe533327db4067c5e1d1fc97c38c9cc540d93570",
-  "notes": "Signed and notarized Pando 0.3.12 for Apple Silicon. Includes the reviewed Brain/session and checkout readiness fixes.",
-  "publishedAt": "2026-09-21T19:17:00Z"
+  "version": "0.3.13",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.13/Pando-0.3.13-arm64.dmg",
+  "filename": "Pando-0.3.13-arm64.dmg",
+  "size": 200214335,
+  "sha256": "ec92d8658e2a264af0c5d17fdb68a621e108dc10dac3b62123176146c3a34579",
+  "notes": "The Brain opens on the Halo again: a ring of every note, links as chords, small electrodes riding them, lit up as the engine works. Two Pandos on one Mac no longer fight over terminals or Brain settings. Pando finds terminals made by your own tmux again. Signed and notarized by Apple.",
+  "publishedAt": "2026-09-22T04:23:24Z"
 }
