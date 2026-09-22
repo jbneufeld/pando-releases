@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1200px;height:630px;overflow:hidden;background:#050505;font-family:Jost,system-ui;color:#f2f2f2}
+.card{position:relative;width:1200px;height:630px;overflow:hidden;
+ background:radial-gradient(900px 520px at 78% 55%,rgba(255,255,255,.10),transparent 60%),radial-gradient(600px 400px at 10% 0%,rgba(255,255,255,.05),transparent 70%),#050505}
+.stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20px 30px,rgba(255,255,255,.35) 50%,transparent 51%),radial-gradient(1px 1px at 130px 90px,rgba(255,255,255,.22) 50%,transparent 51%),radial-gradient(1px 1px at 70px 160px,rgba(255,255,255,.28) 50%,transparent 51%),radial-gradient(1px 1px at 190px 200px,rgba(255,255,255,.18) 50%,transparent 51%);background-size:230px 230px;opacity:.8}
+.grid{position:absolute;left:-10%;right:-10%;bottom:-40px;height:260px;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:60px 60px;transform:perspective(500px) rotateX(62deg);transform-origin:bottom;mask-image:linear-gradient(to top,#000 10%,transparent 90%)}
+.brand{display:flex;align-items:center;gap:14px;font-weight:500;letter-spacing:.34em;font-size:22px}
+.brand svg{width:40px;height:40px}
+h1{font-weight:500;letter-spacing:-.02em;line-height:1.02}
+.kicker{font-size:15px;letter-spacing:.3em;color:#a6a6a6;font-weight:500}
+.sub{color:#b8b8b8;font-size:22px;line-height:1.4}
+.chips{display:flex;gap:10px}
+.chip{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:7px 16px;font-size:17px;color:#e6e6e6;background:rgba(255,255,255,.04)}
+.cta{display:inline-flex;align-items:center;gap:10px;background:#f4f4f4;color:#0a0a0a;border-radius:999px;padding:13px 26px;font-size:19px;font-weight:500;box-shadow:0 0 0 1px rgba(255,255,255,.35),0 0 30px rgba(255,255,255,.3)}
+.logos{display:flex;gap:14px;align-items:center;color:#8a8a8a;font-size:15px}
+.logos img{width:26px;height:26px;object-fit:contain}
+.logos img.inv{filter:invert(1)}
+.shot{position:absolute;border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.14),0 30px 80px rgba(0,0,0,.8),0 0 70px rgba(255,255,255,.08)}
+.shot img{display:block;width:100%}
+.url{position:absolute;font-size:17px;color:#8f8f8f;letter-spacing:.04em}
+/* A split */
+.A .left{position:absolute;left:64px;top:58px;width:470px;display:flex;flex-direction:column;gap:26px}
+.A h1{font-size:64px}
+.A .shot{left:575px;top:92px;width:760px;transform:perspective(1600px) rotateY(-14deg) rotateX(3deg);transform-origin:left center}
+/* B centered hero */
+.B{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:70px;gap:22px}
+.B .mark{width:74px;height:74px}
+.B h1{font-size:80px}
+.B .shot{display:none}
+/* C product-led */
+.C .top{position:absolute;left:0;right:0;top:44px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.C h1{font-size:54px}
+.C .shot{left:120px;right:120px;top:236px;transform:perspective(1400px) rotateX(18deg);transform-origin:top center}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><symbol id="mk" viewBox="0 0 64 64"><g fill="#F2F2F2"><path d="M5 32 A34.877 34.877 0 0 1 33.2 19.221 L33.2 24.024 A30.077 30.077 0 0 0 11.574 32 Z"/><path d="M59 32 A34.877 34.877 0 0 0 35.6 19.386 L35.6 24.216 A30.077 30.077 0 0 1 52.426 32 Z"/><path d="M5 32 A34.877 34.877 0 0 0 28.4 44.614 L28.4 39.784 A30.077 30.077 0 0 1 11.574 32 Z"/><path d="M59 32 A34.877 34.877 0 0 1 30.8 44.779 L30.8 39.976 A30.077 30.077 0 0 0 52.426 32 Z"/><path d="M30.8 8.5 H33.2 V55.5 H30.8 Z"/></g></symbol></svg>
+<div id="root"></div>
+<script>
+const v=new URLSearchParams(location.search).get('v')||'A';
+const logos=`<div class="logos"><span>Runs the agents already on your Mac</span><img src="claude.svg"><img src="codex.png"><img src="gemini.svg"><img src="grok.svg"><img src="ollama.svg" class="inv"></div>`;
+const brand=`<div class="brand"><svg><use href="#mk"/></svg>PANDO</div>`;
+const H={
+A:`<div class="stars"></div><div class="grid"></div>
+<div class="left">${brand}
+<h1>Your agents.<br>One platform.<br>One memory.</h1>
+<div class="sub">Claude Code, Codex and Gemini side by side, sharing one Brain you own.</div>
+<div><span class="cta">Download for Mac</span></div></div>
+<div class="shot"><img src="win0.png"></div>`,
+B:`<div class="stars"></div><div class="grid"></div>
+<svg class="mark"><use href="#mk"/></svg>
+<div class="kicker">BUILT FOR VIBE CODERS</div>
+<h1>Your agents. One platform.<br>One memory.</h1>
+${logos}
+<div class="url" style="bottom:34px;left:0;right:0;text-align:center">pandoworkbench.com</div>`,
+C:`<div class="stars"></div>
+<div class="top">${brand}<h1>Your agents. One platform. One memory.</h1></div>
+<div class="shot"><img src="win0.png"></div>`};
+document.getElementById('root').outerHTML=`<div class="card ${v}">${H[v]}</div>`;
+</script></body></html>
