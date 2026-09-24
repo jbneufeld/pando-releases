@@ -1,9 +1,9 @@
 {
-  "version": "0.3.15",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.15/Pando-0.3.15-arm64.dmg",
-  "filename": "Pando-0.3.15-arm64.dmg",
-  "size": 200254238,
-  "sha256": "3926a77a646c697fc092a638f711b3ac18217282038edb303aaf94253d2289f1",
-  "notes": "A new look for Pando: deep navy with one colour per meaning, more room for your terminals, and a side list that slides out when you point at the left edge. Drag terminals between workspaces, find your helpers in Chat, and see a new opening. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-23T23:03:39Z"
+  "version": "0.3.16",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.16/Pando-0.3.16-arm64.dmg",
+  "filename": "Pando-0.3.16-arm64.dmg",
+  "size": 200238493,
+  "sha256": "61ff5cba9ef78d333f85311700e209da296024912b9c23df4ab89b6f6e9215ad",
+  "notes": "Typing no longer stalls, the grey behind your sent messages is gone, and the side list is quieter: names keep their full width and empty workspaces stay out of the way. Signed and notarized by Apple.",
+  "publishedAt": "2026-09-24T04:03:13Z"
 }
