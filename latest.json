@@ -1,9 +1,9 @@
 {
-  "version": "0.3.16",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.16/Pando-0.3.16-arm64.dmg",
-  "filename": "Pando-0.3.16-arm64.dmg",
-  "size": 200238493,
-  "sha256": "61ff5cba9ef78d333f85311700e209da296024912b9c23df4ab89b6f6e9215ad",
-  "notes": "Typing no longer stalls, the grey behind your sent messages is gone, and the side list is quieter: names keep their full width and empty workspaces stay out of the way. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-24T04:03:13Z"
+  "version": "0.3.17",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.17/Pando-0.3.17-arm64.dmg",
+  "filename": "Pando-0.3.17-arm64.dmg",
+  "size": 200274442,
+  "sha256": "f82c08735b80f235c61d41365142442d6124daf4b9773e096abb4ce8c786cd56",
+  "notes": "Activity shows every agent in one place, a Focus timer keeps you on task, Preview opens as a big card with a real browser, and new terminals start with the model and effort you pick. Comfort is for everyone, plus safety fixes from a full code audit. Signed and notarized by Apple.",
+  "publishedAt": "2026-09-25T00:56:55Z"
 }
