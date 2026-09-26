@@ -1,9 +1,9 @@
 {
-  "version": "0.3.17",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.17/Pando-0.3.17-arm64.dmg",
-  "filename": "Pando-0.3.17-arm64.dmg",
-  "size": 200274442,
-  "sha256": "f82c08735b80f235c61d41365142442d6124daf4b9773e096abb4ce8c786cd56",
-  "notes": "Activity shows every agent in one place, a Focus timer keeps you on task, Preview opens as a big card with a real browser, and new terminals start with the model and effort you pick. Comfort is for everyone, plus safety fixes from a full code audit. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-25T00:56:55Z"
+  "version": "0.3.18",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.18/Pando-0.3.18-arm64.dmg",
+  "filename": "Pando-0.3.18-arm64.dmg",
+  "size": 200325451,
+  "sha256": "a7232c9c05f0fe8ea4bacb8d2141a93062c44c7d239a83c03e62d67a32106366",
+  "notes": "A first run that sets new customers up, a right rail with Activity and Focus, a focus timer per workspace, a Layout card with picture tiles, a resizable Preview with zoom, and a full security audit. Signed and notarized by Apple.",
+  "publishedAt": "2026-09-26T23:33:49Z"
 }
