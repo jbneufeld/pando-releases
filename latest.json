@@ -1,9 +1,9 @@
 {
-  "version": "0.3.18",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.18/Pando-0.3.18-arm64.dmg",
-  "filename": "Pando-0.3.18-arm64.dmg",
-  "size": 200325451,
-  "sha256": "a7232c9c05f0fe8ea4bacb8d2141a93062c44c7d239a83c03e62d67a32106366",
-  "notes": "A first run that sets new customers up, a right rail with Activity and Focus, a focus timer per workspace, a Layout card with picture tiles, a resizable Preview with zoom, and a full security audit. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-26T23:33:49Z"
+  "version": "0.3.19",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.19/Pando-0.3.19-arm64.dmg",
+  "filename": "Pando-0.3.19-arm64.dmg",
+  "size": 200319188,
+  "sha256": "8507853a2874d6eec719c6248ee12c5b7929ec17fb41e21db03edd2dcb2ce649",
+  "notes": "The first-run demo types your first task on Claude Code 2.1.283, Report a bug from Settings, and the best grid on every add and close. Signed and notarized by Apple.",
+  "publishedAt": "2026-09-27T04:09:43Z"
 }
