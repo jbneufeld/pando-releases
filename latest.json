@@ -1,9 +1,9 @@
 {
-  "version": "0.3.19",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.19/Pando-0.3.19-arm64.dmg",
-  "filename": "Pando-0.3.19-arm64.dmg",
-  "size": 200319188,
-  "sha256": "8507853a2874d6eec719c6248ee12c5b7929ec17fb41e21db03edd2dcb2ce649",
-  "notes": "The first-run demo types your first task on Claude Code 2.1.283, Report a bug from Settings, and the best grid on every add and close. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-27T04:09:43Z"
+  "version": "0.3.20",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.20/Pando-0.3.20-arm64.dmg",
+  "filename": "Pando-0.3.20-arm64.dmg",
+  "size": 200323062,
+  "sha256": "13b94cf308884d0cd55948d48fcf30c50c5a2653b2f8ba0fa567918de231474c",
+  "notes": "Pando opens on the workspace you were last in, New session can pick the folder from a Mac window, the model lists keep themselves up to date, and approvals, terminals and startup are safer and smoother. Signed and notarized by Apple.",
+  "publishedAt": "2026-09-29T22:50:27Z"
 }
