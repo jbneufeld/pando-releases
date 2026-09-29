@@ -13,20 +13,23 @@ BridgeMind; the download is offered only after purchase; clearer on phones; orig
 - IOSDL-01 (js): the iPhone script no longer rewrites the button to "Send yourself the link" or adds
   its phone note; the `ios` class is still set.
 - colors-01: CSS for the above plus `.pando-static-page{overflow-x:clip}` (no sideways scroll at 390 px).
+- REFUND7-01 / REFUND7-02: the price note and its monthly/annual toggle say "Full refund within 7 days."
+  (Jared 2026-09-28: 7-day refund for new purchases). Otto's pricing code also sets this text at runtime,
+  so his own strings must change too.
 - BUILD-01: `--build:"signin-front-2026-09-28"`.
 
-**61 page edits** (voice-2026-09-25's 57 + 4), unique ids, each matching once, all ASCII.
+**63 page edits** (voice-2026-09-25's 57 + 6), unique ids, each matching once, all ASCII.
 
-sha256: `0a70cae6ffdb7f937685da7205b7bacad23678ef14b3007525df2f5682660116`
+sha256: `f967683335b9c89e7fe271dcfa51c644340494454d678ee2308af592c882743c`
 
 ## How to apply (three constants in PandoLandingPage.tsx, nothing else)
 
 1. Patch URL: `https://cdn.jsdelivr.net/gh/jbneufeld/pando-releases@<COMMIT>/site/patches/signin-2026-09-28/edits.json`
-2. SHA-256: `0a70cae6ffdb7f937685da7205b7bacad23678ef14b3007525df2f5682660116`
-3. The page-edit count check: 57 becomes 61 (the check and its error text).
+2. SHA-256: `f967683335b9c89e7fe271dcfa51c644340494454d678ee2308af592c882743c`
+3. The page-edit count check: 57 becomes 63 (the check and its error text).
 
 Do not edit the long embedded page strings in PandoLandingPage.tsx or pandoLandingPayload.ts.
 
 Proven before push through Otto's real loader (live HTML with only these constants swapped, patch
-served locally): passed, 61/61 matches, zero "Download for Mac", scrollWidth 390 at 390, desktop,
+served locally): passed, 63/63 matches, zero "Download for Mac", scrollWidth 390 at 390, desktop,
 phone and iPhone.

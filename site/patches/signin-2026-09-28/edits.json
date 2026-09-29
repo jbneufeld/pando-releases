@@ -560,6 +560,24 @@
    "why": "The iPhone script rewrote the download button to \"Send yourself the link\" and added a phone note; the gated section replaces both. Keep the ios class, skip the rest.",
    "find": "  document.documentElement.classList.add('ios');\n  var link = $('relLink');",
    "replace": "  document.documentElement.classList.add('ios');\n  return;\n  var link = $('relLink');"
+  },
+  {
+   "id": "REFUND7-01",
+   "target": "body",
+   "lane": "refund",
+   "count": 1,
+   "why": "Refund window 30 -> 7 days for new purchases (Jared 2026-09-28).",
+   "find": "<p class=\"pnote\" id=\"priceNote\">Billed monthly. Cancel anytime. Full refund within 30 days.</p>",
+   "replace": "<p class=\"pnote\" id=\"priceNote\">Billed monthly. Cancel anytime. Full refund within 7 days.</p>"
+  },
+  {
+   "id": "REFUND7-02",
+   "target": "js",
+   "lane": "refund",
+   "count": 1,
+   "why": "Same 7-day wording in the monthly/annual toggle script.",
+   "find": "var COPY = {m:['$24','Billed monthly. Cancel anytime. Full refund within 30 days.'], y:['$19','$228 billed yearly. Cancel anytime. Full refund within 30 days.']};",
+   "replace": "var COPY = {m:['$24','Billed monthly. Cancel anytime. Full refund within 7 days.'], y:['$19','$228 billed yearly. Cancel anytime. Full refund within 7 days.']};"
   }
  ]
 }
