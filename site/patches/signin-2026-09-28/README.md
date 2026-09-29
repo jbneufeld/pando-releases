@@ -18,16 +18,18 @@ BridgeMind; the download is offered only after purchase; clearer on phones; orig
   so his own strings must change too.
 - colors-01 also hides `[data-audos-crawler-snapshot]` (the Audos search-engine text). Live already hides it
   through html.audos-crawler-snapshot-js; the draft preview did not, so it showed as a wall of text.
+- colors-01 also gives the headline reveal masks room below (`.hero-copy h1 .line` padding-bottom
+  .14em, margin-bottom -.14em) so descenders like the g in "agents" are no longer clipped; spacing unchanged.
 - BUILD-01: `--build:"signin-front-2026-09-28"`.
 
 **63 page edits** (voice-2026-09-25's 57 + 6), unique ids, each matching once, all ASCII.
 
-sha256: `024df32e92186780f60db9abf3673748230f759caa8b7d73f669062251794d2c`
+sha256: `5217e2829fcb4fa1a4774703fee4b5e2104b166a326237a346f08c5eef570542`
 
 ## How to apply (three constants in PandoLandingPage.tsx, nothing else)
 
 1. Patch URL: `https://cdn.jsdelivr.net/gh/jbneufeld/pando-releases@<COMMIT>/site/patches/signin-2026-09-28/edits.json`
-2. SHA-256: `024df32e92186780f60db9abf3673748230f759caa8b7d73f669062251794d2c`
+2. SHA-256: `5217e2829fcb4fa1a4774703fee4b5e2104b166a326237a346f08c5eef570542`
 3. The page-edit count check: 57 becomes 63 (the check and its error text).
 
 Do not edit the long embedded page strings in PandoLandingPage.tsx or pandoLandingPayload.ts.
