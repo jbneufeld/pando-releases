@@ -1,9 +1,9 @@
 {
-  "version": "0.3.21",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.21/Pando-0.3.21-arm64.dmg",
-  "filename": "Pando-0.3.21-arm64.dmg",
-  "size": 200321084,
-  "sha256": "b9f8c6f05c6ab7d5dfb487d37e2677e5d05a135800ca22d258e7dc26c6df3c65",
-  "notes": "Your agents are now connected to the Brain: setup connects every installed agent when you sign in, and if you set Pando up earlier the next start connects them for you. Signed and notarized by Apple.",
-  "publishedAt": "2026-09-30T04:48:03Z"
+  "version": "0.3.23",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.23/Pando-0.3.23-arm64.dmg",
+  "filename": "Pando-0.3.23-arm64.dmg",
+  "size": 170284523,
+  "sha256": "66a7655e034c2ba5d29cf6abda26ed133e4e65baeba81bed2fc99d673f1572a6",
+  "notes": "Faster and calmer: no freeze after a restart, smoother terminals with many panes, and animations rest while Pando is in the background. Agents multiple-choice questions now ring like any other stop, Preview is one docked panel, and grey next-step suggestions appear in Codex, Grok, Gemini CLI and Antigravity. Plus security hardening. Signed and notarized by Apple.",
+  "publishedAt": "2026-10-05T00:33:54Z"
 }
