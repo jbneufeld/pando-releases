@@ -1,9 +1,9 @@
 {
-  "version": "0.3.23",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.23/Pando-0.3.23-arm64.dmg",
-  "filename": "Pando-0.3.23-arm64.dmg",
-  "size": 170284523,
-  "sha256": "66a7655e034c2ba5d29cf6abda26ed133e4e65baeba81bed2fc99d673f1572a6",
-  "notes": "Faster and calmer: no freeze after a restart, smoother terminals with many panes, and animations rest while Pando is in the background. Agents multiple-choice questions now ring like any other stop, Preview is one docked panel, and grey next-step suggestions appear in Codex, Grok, Gemini CLI and Antigravity. Plus security hardening. Signed and notarized by Apple.",
-  "publishedAt": "2026-10-05T00:33:54Z"
+  "version": "0.3.24",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.24/Pando-0.3.24-arm64.dmg",
+  "filename": "Pando-0.3.24-arm64.dmg",
+  "size": 170765511,
+  "sha256": "2223923e10da8014098b1f8f5435061c2f636e8d84ba520e1b473419c6247667",
+  "notes": "Updates now install themselves: press Update and Pando restarts into the new version. Pando finds your agents wherever your Terminal finds them, Antigravity is one of Pando's agents, install buttons work without Node.js, and the Brain connection says exactly which agents read it. Signed and notarized by Apple.",
+  "publishedAt": "2026-10-06T18:53:38Z"
 }
