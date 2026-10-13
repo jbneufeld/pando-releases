@@ -1,9 +1,9 @@
 {
-  "version": "0.3.59",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.59/Pando-0.3.59-arm64.dmg",
-  "filename": "Pando-0.3.59-arm64.dmg",
-  "size": 171386945,
-  "sha256": "87a4a51ced5cff01d27b7023c5c72dda88405dc05adb7e8fa21fce25e05389d1",
-  "notes": "Pando on your phone: see every agent and answer it from your iPhone, in a clean new design. Every terminal gets its own Pando Bot. Undo is on by default, Pando checks the work after each turn and stops an agent going in circles, checks your app before a deploy, Preview is a real browser, near your plan's limit Pando offers to continue in another agent, and terminals come back if they die. Signed and notarized by Apple.",
-  "publishedAt": "2026-10-11T18:18:27Z"
+  "version": "0.3.60",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.60/Pando-0.3.60-arm64.dmg",
+  "filename": "Pando-0.3.60-arm64.dmg",
+  "size": 171404889,
+  "sha256": "3aa3e9c46bde27b5a819891b6659dfab27d0f2575c0cd89e77b81aa985e20db4",
+  "notes": "Antigravity (Google's replacement for Gemini CLI) and Cursor are now in New session for everyone, and setup has big cards for both. Antigravity chats work again. Signed and notarized by Apple.",
+  "publishedAt": "2026-10-13T14:45:36Z"
 }
