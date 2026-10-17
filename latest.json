@@ -1,9 +1,9 @@
 {
-  "version": "0.3.60",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.60/Pando-0.3.60-arm64.dmg",
-  "filename": "Pando-0.3.60-arm64.dmg",
-  "size": 171404889,
-  "sha256": "3aa3e9c46bde27b5a819891b6659dfab27d0f2575c0cd89e77b81aa985e20db4",
-  "notes": "Antigravity (Google's replacement for Gemini CLI) and Cursor are now in New session for everyone, and setup has big cards for both. Antigravity chats work again. Signed and notarized by Apple.",
-  "publishedAt": "2026-10-13T14:45:36Z"
+  "version": "0.3.61",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.61/Pando-0.3.61-arm64.dmg",
+  "filename": "Pando-0.3.61-arm64.dmg",
+  "size": 171536498,
+  "sha256": "1da7986eed89789741ccc905158a1d7f3ff4c8113db21bdcc2f7497622243c95",
+  "notes": "Settings is a list of sections with one section at a time. A phone waiting to be confirmed shows in the left list and in Settings with its code. Chat: rename, pin and delete chats, helpers with standing jobs, Ask Pando, and debates between your agents. Undo is on from the start. A project's own checks run only in folders you trust. Signed and notarized by Apple.",
+  "publishedAt": "2026-10-17T19:35:05Z"
 }
