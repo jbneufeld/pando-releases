@@ -1,9 +1,9 @@
 {
-  "version": "0.3.63",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.63/Pando-0.3.63-arm64.dmg",
-  "filename": "Pando-0.3.63-arm64.dmg",
-  "size": 172181175,
-  "sha256": "ede3460eba93e6d2edb5824fcb4526f01ad2b40fc2ec205e32ff7cc113e653bd",
-  "notes": "Your first job and its second opinion use only the AIs you picked in setup, and Pando trusts the folders you add, so agents stop asking. One status for every agent, easier-to-read screens, and your Brain notes no longer show up as your own message. On a free trial, a line shows the days left; a declined payment shows Update payment. Signed and notarized by Apple.",
-  "publishedAt": "2026-11-12T17:22:17Z"
+  "version": "0.3.64",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.64/Pando-0.3.64-arm64.dmg",
+  "filename": "Pando-0.3.64-arm64.dmg",
+  "size": 172248933,
+  "sha256": "1cae1dc2f8853e8134aafe6e8dd94c48729e0bd95d417ad84d75bdde47b4af4a",
+  "notes": "Your agents can use your Mac apps: an agent asks for one app and you allow it for a few minutes in Settings, or say no. And one skill library for every agent, so a skill you add once works in Claude, Codex, Gemini and the rest. Paid plan and trial. Signed and notarized by Apple.",
+  "publishedAt": "2026-11-13T00:33:46Z"
 }
