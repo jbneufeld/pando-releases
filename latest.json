@@ -1,9 +1,9 @@
 {
-  "version": "0.3.64",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.64/Pando-0.3.64-arm64.dmg",
-  "filename": "Pando-0.3.64-arm64.dmg",
-  "size": 172248933,
-  "sha256": "1cae1dc2f8853e8134aafe6e8dd94c48729e0bd95d417ad84d75bdde47b4af4a",
-  "notes": "Your agents can use your Mac apps: an agent asks for one app and you allow it for a few minutes in Settings, or say no. And one skill library for every agent, so a skill you add once works in Claude, Codex, Gemini and the rest. Paid plan and trial. Signed and notarized by Apple.",
-  "publishedAt": "2026-11-13T00:33:46Z"
+  "version": "0.3.65",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.65/Pando-0.3.65-arm64.dmg",
+  "filename": "Pando-0.3.65-arm64.dmg",
+  "size": 172240243,
+  "sha256": "a73043df558950679a312ad5d38a138de9cf33c0b15b951ae13e65225bde0032",
+  "notes": "Change or turn off the Option-Space shortcut that opens Pando, in Settings > Shortcuts. Close a terminal or workspace right from the side list. New Claude terminals use your own default model. Signed and notarized by Apple.",
+  "publishedAt": "2026-11-14T17:25:29Z"
 }
