@@ -1,9 +1,9 @@
 {
-  "version": "0.3.66",
-  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.66/Pando-0.3.66-arm64.dmg",
-  "filename": "Pando-0.3.66-arm64.dmg",
-  "size": 172255244,
-  "sha256": "18ef9fe8d7fdaf3835f96de3050543be25df2eb673bb43b427a9f01733afcfb8",
-  "notes": "Preview is redesigned: one thing at a time with a strip along the bottom, page pictures, close and zoom anything, and more pictures show (iPhone HEIC, TIFF, AVIF). Signed and notarized by Apple.",
-  "publishedAt": "2026-11-14T19:01:14Z"
+  "version": "0.3.67",
+  "url": "https://github.com/jbneufeld/pando-releases/releases/download/v0.3.67/Pando-0.3.67-arm64.dmg",
+  "filename": "Pando-0.3.67-arm64.dmg",
+  "size": 172295489,
+  "sha256": "e249696fcdd9395eadc35b3619ce01948a2a0d568d491a46f312d8a1739b564c",
+  "notes": "Comfort mode is rebuilt with a tab per task, switch model and effort from a terminal, pick the account per terminal, and a redesigned phone app. Signed and notarized by Apple.",
+  "publishedAt": "2026-11-27T18:24:28Z"
 }
